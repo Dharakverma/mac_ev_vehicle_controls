@@ -1,0 +1,1407 @@
+
+
+-- START@RTICANMM_MAIN_CAN_Driver_DS1401_2_2_1
+
+
+
+group "CAN_Driver" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMM_CTL_SETUP_Driver_ID
+{
+type: UINT(8)
+alias: "Variation"
+flags: OUTPUT|READONLY
+desc: "current Variation of Driver"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_NL
+{
+type: UINT(32)
+alias: "NumLostMsgs"
+flags: OUTPUT|READONLY
+desc: "Number of lost messages"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TRAFFIC
+{
+type: UINT(8)
+alias: "Traffic"
+flags: OUTPUT|READONLY
+desc: "Traffic"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_GEIN
+{
+type: UINT(8)
+alias: "GlobalEnable"
+flags: PARAM
+desc: "Enable CAN_Driver"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Driver_TXGEIN
+{
+type: UINT(8)
+alias: "GlobalEnableTX"
+flags: PARAM
+desc: "Enable TX of CAN_Driver"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Driver_MAXMSGPERSTEP
+{
+type: INT(32)
+alias: "MaxMessagesPerStep"
+flags: PARAM
+desc: "MaxMessagesPerStep"
+unit: ""
+range: <0; 100>
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXEEIE[0]
+{
+type: UINT(8)
+alias: "VCU_Enable"
+flags: PARAM
+desc: "Enable VCU"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+
+group "CoolingLoopModes" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Driver_RX_Msg_1_Sgn_1
+{
+type: UINT(8)
+alias: "InverterLoopFanMode"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_1_Sgn_2
+{
+type: UINT(8)
+alias: "InverterLoopPumpMode"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_1_Sgn_3
+{
+type: UINT(8)
+alias: "SpeakerRequest"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_1_Sgn_4
+{
+type: UINT(8)
+alias: "MotorLoopFanMode"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_1_Sgn_5
+{
+type: UINT(8)
+alias: "MotorLoopPumpMode"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_MIDRX[2]
+{
+type: UINT(32)
+alias: "CoolingLoopModes_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 514
+}
+
+
+
+
+CANMMCAN_Driver_MIDFRX[2]
+{
+type: UINT(8)
+alias: "CoolingLoopModes_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXLEN[2]
+{
+type: UINT(8)
+alias: "CoolingLoopModes_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 2
+}
+
+
+
+
+CANMMCAN_Driver_RXsta[2]
+{
+type: UINT(8)
+alias: "CoolingLoopModes_status"
+flags: OUTPUT|READONLY
+desc: "CoolingLoopModes Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXdt[2]
+{
+type: flt(64,IEEE)
+alias: "CoolingLoopModes_dt"
+flags: OUTPUT|READONLY
+desc: "CoolingLoopModes DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXt[2]
+{
+type: flt(64,IEEE)
+alias: "CoolingLoopModes_time"
+flags: OUTPUT|READONLY
+desc: "CoolingLoopModes Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+group "TX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Driver_WBS[0]
+{
+type: UINT(8)
+alias: "CoolingLoopModes_CheckEnable"
+flags: OUTPUT|READONLY
+desc: "Check enabled CoolingLoopModes"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXDT[0]
+{
+type: flt(64,IEEE)
+alias: "CoolingLoopModes_DelayTime"
+flags: OUTPUT|READONLY
+desc: "DelayTime CoolingLoopModes"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXsta[0]
+{
+type: UINT(8)
+alias: "CoolingLoopModes_status"
+flags: OUTPUT|READONLY
+desc: "CoolingLoopModes Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXEIN[0]
+{
+type: UINT(8)
+alias: "CoolingLoopModes_Enable"
+flags: PARAM
+desc: "Enable CoolingLoopModes"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Driver_TXCIE[0]
+{
+type: UINT(8)
+alias: "CoolingLoopModes_PeriodicalOn"
+flags: PARAM
+desc: "Activate cyclic transmission for CoolingLoopModes"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Driver_TXKIEX[0]
+{
+type: UINT(8)
+alias: "CoolingLoopModes_Kickout"
+flags: PARAM
+desc: "Kickout CoolingLoopModes"
+unit: ""
+range: <0; 1>
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXCT[0]
+{
+type: flt(64,IEEE)
+alias: "CoolingLoopModes_CycleTime"
+flags: PARAM
+desc: "CycleTime CoolingLoopModes"
+unit: "s"
+range: <0; 1000>
+value: 0
+}
+
+
+
+
+
+endgroup -- block-group "TX"
+
+
+
+endgroup -- block-group "CoolingLoopModes"
+
+
+
+group "CoolingLoopsData" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Driver_RX_Msg_2_Sgn_1
+{
+type: INT(16)
+alias: "InverterLoopFluidTemp"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: -20
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_2_Sgn_2
+{
+type: INT(16)
+alias: "MotorLoopFluidTemp"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: -20
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_2_Sgn_3
+{
+type: UINT(8)
+alias: "InverterLoopPressure"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "kPa"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_2_Sgn_4
+{
+type: UINT(8)
+alias: "MotorLoopPressure"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "kPa"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_2_Sgn_5
+{
+type: UINT(8)
+alias: "InverterLoopTempSensorStatus"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_2_Sgn_6
+{
+type: UINT(8)
+alias: "MotorLoopTempSensorStatus"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_2_Sgn_7
+{
+type: UINT(8)
+alias: "InverterLoopPressureSensorStatus"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_2_Sgn_8
+{
+type: UINT(8)
+alias: "MotorLoopPressureSensorStatus"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_2_Sgn_9
+{
+type: UINT(8)
+alias: "MC_CoolingLoopsData"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_MIDRX[1]
+{
+type: UINT(32)
+alias: "CoolingLoopsData_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 513
+}
+
+
+
+
+CANMMCAN_Driver_MIDFRX[1]
+{
+type: UINT(8)
+alias: "CoolingLoopsData_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXLEN[1]
+{
+type: UINT(8)
+alias: "CoolingLoopsData_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 7
+}
+
+
+
+
+CANMMCAN_Driver_RXsta[1]
+{
+type: UINT(8)
+alias: "CoolingLoopsData_status"
+flags: OUTPUT|READONLY
+desc: "CoolingLoopsData Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXdt[1]
+{
+type: flt(64,IEEE)
+alias: "CoolingLoopsData_dt"
+flags: OUTPUT|READONLY
+desc: "CoolingLoopsData DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXt[1]
+{
+type: flt(64,IEEE)
+alias: "CoolingLoopsData_time"
+flags: OUTPUT|READONLY
+desc: "CoolingLoopsData Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "CoolingLoopsData"
+
+
+
+group "PedalPositions" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_1
+{
+type: UINT(8)
+alias: "BrakePedalPosition0"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "%"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_2
+{
+type: UINT(8)
+alias: "BrakePedalPosition1"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "%"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_3
+{
+type: UINT(8)
+alias: "AcceleratorPedalPosition1"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "%"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_4
+{
+type: UINT(8)
+alias: "AcceleratorPedalPosition0"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "%"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_5
+{
+type: UINT(8)
+alias: "DriveButton"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_6
+{
+type: UINT(8)
+alias: "Bpps0Status"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_7
+{
+type: UINT(8)
+alias: "Bpps1Status"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_8
+{
+type: UINT(8)
+alias: "Apps0Status"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_9
+{
+type: UINT(8)
+alias: "Apps1Status"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_10
+{
+type: UINT(8)
+alias: "BspdFault"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_3_Sgn_11
+{
+type: UINT(8)
+alias: "MC_PedalPosition"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_MIDRX[0]
+{
+type: UINT(32)
+alias: "PedalPositions_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 257
+}
+
+
+
+
+CANMMCAN_Driver_MIDFRX[0]
+{
+type: UINT(8)
+alias: "PedalPositions_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXLEN[0]
+{
+type: UINT(8)
+alias: "PedalPositions_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 7
+}
+
+
+
+
+CANMMCAN_Driver_RXsta[0]
+{
+type: UINT(8)
+alias: "PedalPositions_status"
+flags: OUTPUT|READONLY
+desc: "PedalPositions Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXdt[0]
+{
+type: flt(64,IEEE)
+alias: "PedalPositions_dt"
+flags: OUTPUT|READONLY
+desc: "PedalPositions DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXt[0]
+{
+type: flt(64,IEEE)
+alias: "PedalPositions_time"
+flags: OUTPUT|READONLY
+desc: "PedalPositions Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "PedalPositions"
+
+
+
+group "TemperatureInfo" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Driver_RX_Msg_4_Sgn_1
+{
+type: INT(16)
+alias: "LeftFrontMotorTemperature"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: -20
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_4_Sgn_2
+{
+type: INT(16)
+alias: "LeftRearMotorTemperature"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: -20
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_4_Sgn_3
+{
+type: INT(16)
+alias: "RightFrontMotorTemperature"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: -20
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_4_Sgn_4
+{
+type: INT(16)
+alias: "RightRearMotorTemperature"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: -20
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_4_Sgn_5
+{
+type: INT(16)
+alias: "BatteryTemperature"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: -20
+}
+
+
+
+
+CANMMCAN_Driver_MIDRX[3]
+{
+type: UINT(32)
+alias: "TemperatureInfo_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 1282
+}
+
+
+
+
+CANMMCAN_Driver_MIDFRX[3]
+{
+type: UINT(8)
+alias: "TemperatureInfo_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXLEN[3]
+{
+type: UINT(8)
+alias: "TemperatureInfo_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 5
+}
+
+
+
+
+CANMMCAN_Driver_RXsta[3]
+{
+type: UINT(8)
+alias: "TemperatureInfo_status"
+flags: OUTPUT|READONLY
+desc: "TemperatureInfo Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXdt[3]
+{
+type: flt(64,IEEE)
+alias: "TemperatureInfo_dt"
+flags: OUTPUT|READONLY
+desc: "TemperatureInfo DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXt[3]
+{
+type: flt(64,IEEE)
+alias: "TemperatureInfo_time"
+flags: OUTPUT|READONLY
+desc: "TemperatureInfo Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+group "TX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Driver_WBS[1]
+{
+type: UINT(8)
+alias: "TemperatureInfo_CheckEnable"
+flags: OUTPUT|READONLY
+desc: "Check enabled TemperatureInfo"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXDT[1]
+{
+type: flt(64,IEEE)
+alias: "TemperatureInfo_DelayTime"
+flags: OUTPUT|READONLY
+desc: "DelayTime TemperatureInfo"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXsta[1]
+{
+type: UINT(8)
+alias: "TemperatureInfo_status"
+flags: OUTPUT|READONLY
+desc: "TemperatureInfo Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXEIN[1]
+{
+type: UINT(8)
+alias: "TemperatureInfo_Enable"
+flags: PARAM
+desc: "Enable TemperatureInfo"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Driver_TXCIE[1]
+{
+type: UINT(8)
+alias: "TemperatureInfo_PeriodicalOn"
+flags: PARAM
+desc: "Activate cyclic transmission for TemperatureInfo"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Driver_TXKIEX[1]
+{
+type: UINT(8)
+alias: "TemperatureInfo_Kickout"
+flags: PARAM
+desc: "Kickout TemperatureInfo"
+unit: ""
+range: <0; 1>
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXCT[1]
+{
+type: flt(64,IEEE)
+alias: "TemperatureInfo_CycleTime"
+flags: PARAM
+desc: "CycleTime TemperatureInfo"
+unit: "s"
+range: <0; 1000>
+value: 0
+}
+
+
+
+
+
+endgroup -- block-group "TX"
+
+
+
+endgroup -- block-group "TemperatureInfo"
+
+
+
+group "VehicleInfo" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Driver_RX_Msg_5_Sgn_1
+{
+type: UINT(8)
+alias: "MaximumPowerAvailablePercentage"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_5_Sgn_2
+{
+type: UINT(8)
+alias: "SocPercentage"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "%"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_5_Sgn_3
+{
+type: UINT(8)
+alias: "VcuErrors"
+flags: OUTPUT|READONLY
+desc: "Errors and warnings are represented by specific code numbers, and are reported by the VCU."
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_5_Sgn_4
+{
+type: UINT(8)
+alias: "VehicleSpeed"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "km/h"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RX_Msg_5_Sgn_5
+{
+type: UINT(8)
+alias: "VehicleStatus"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_MIDRX[4]
+{
+type: UINT(32)
+alias: "VehicleInfo_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 1283
+}
+
+
+
+
+CANMMCAN_Driver_MIDFRX[4]
+{
+type: UINT(8)
+alias: "VehicleInfo_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXLEN[4]
+{
+type: UINT(8)
+alias: "VehicleInfo_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 5
+}
+
+
+
+
+CANMMCAN_Driver_RXsta[4]
+{
+type: UINT(8)
+alias: "VehicleInfo_status"
+flags: OUTPUT|READONLY
+desc: "VehicleInfo Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXdt[4]
+{
+type: flt(64,IEEE)
+alias: "VehicleInfo_dt"
+flags: OUTPUT|READONLY
+desc: "VehicleInfo DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_RXt[4]
+{
+type: flt(64,IEEE)
+alias: "VehicleInfo_time"
+flags: OUTPUT|READONLY
+desc: "VehicleInfo Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+group "TX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Driver_WBS[2]
+{
+type: UINT(8)
+alias: "VehicleInfo_CheckEnable"
+flags: OUTPUT|READONLY
+desc: "Check enabled VehicleInfo"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXDT[2]
+{
+type: flt(64,IEEE)
+alias: "VehicleInfo_DelayTime"
+flags: OUTPUT|READONLY
+desc: "DelayTime VehicleInfo"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXsta[2]
+{
+type: UINT(8)
+alias: "VehicleInfo_status"
+flags: OUTPUT|READONLY
+desc: "VehicleInfo Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXEIN[2]
+{
+type: UINT(8)
+alias: "VehicleInfo_Enable"
+flags: PARAM
+desc: "Enable VehicleInfo"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Driver_TXCIE[2]
+{
+type: UINT(8)
+alias: "VehicleInfo_PeriodicalOn"
+flags: PARAM
+desc: "Activate cyclic transmission for VehicleInfo"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Driver_TXKIEX[2]
+{
+type: UINT(8)
+alias: "VehicleInfo_Kickout"
+flags: PARAM
+desc: "Kickout VehicleInfo"
+unit: ""
+range: <0; 1>
+value: 0
+}
+
+
+
+
+CANMMCAN_Driver_TXCT[2]
+{
+type: flt(64,IEEE)
+alias: "VehicleInfo_CycleTime"
+flags: PARAM
+desc: "CycleTime VehicleInfo"
+unit: "s"
+range: <0; 1000>
+value: 0
+}
+
+
+
+
+
+endgroup -- block-group "TX"
+
+
+
+endgroup -- block-group "VehicleInfo"
+
+
+
+group "RT" -- subsystem-group
+{
+     flags: COLLAPSED | HIDDEN
+}
+
+
+
+group "FreeRawMessages" -- subsystem-group
+{
+     flags: COLLAPSED | HIDDEN
+}
+
+
+
+endgroup -- block-group "FreeRawMessages"
+
+
+
+endgroup -- block-group "RT"
+
+
+
+endgroup -- block-group "CAN_Driver"
+
+
+-- END@RTICANMM_MAIN_CAN_Driver_DS1401_2_2_1

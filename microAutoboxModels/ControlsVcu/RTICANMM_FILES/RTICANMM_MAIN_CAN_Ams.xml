@@ -1,0 +1,783 @@
+<Type>MainBlock</Type>
+<GenInfo>
+   <Ver>5.4.737888.359837963</Ver>
+   <Var>1</Var>
+   <CANName>CAN_Ams</CANName>
+   <CANUniqueID>3</CANUniqueID>
+   <CANFDSupport>OFF</CANFDSupport>
+   <CapMsgs>
+      <A>OFF</A>
+   </CapMsgs>
+   <GW>OFF</GW>
+   <J1939>OFF</J1939>
+   <CRCs attCount="0"/>
+   <NoFreeIds>0</NoFreeIds>
+   <NoRTTMsgs>0</NoRTTMsgs>
+</GenInfo>
+<TRCInfos>
+   <TRCPrefixGlobal>BusSystems/CAN/CAN_Ams</TRCPrefixGlobal>
+   <TRCPrefixMsg>
+      <RX>BusSystems/CAN/CAN_Ams/%MsgName%/RX/</RX>
+      <TX>BusSystems/CAN/CAN_Ams/%MsgName%/TX/</TX>
+      <Capt>BusSystems/CAN/CAN_Ams/%MsgName%/</Capt>
+   </TRCPrefixMsg>
+</TRCInfos>
+<Settings>
+   <Global>
+      <Generic>
+         <GlobalVar attName="En">
+            <InportDefault>0</InportDefault>
+            <Logic>-</Logic>
+            <Source>TRC</Source>
+            <TN>GlobalEnable</TN>
+            <DN>GlobalEnable</DN>
+         </GlobalVar>
+         <GlobalVar attName="EnTx">
+            <InportDefault>0</InportDefault>
+            <Logic>-</Logic>
+            <Source>TRC</Source>
+            <TN>GlobalEnableTX</TN>
+            <DN>GlobalEnableTX</DN>
+         </GlobalVar>
+         <GlobalVar attName="Var">
+            <TN>Variation</TN>
+            <DN>Variation</DN>
+         </GlobalVar>
+         <GlobalVar attName="MaxMessagesPerStep">
+            <TN>MaxMessagesPerStep</TN>
+            <DN>Maximum TX Messages per SampleStep</DN>
+         </GlobalVar>
+      </Generic>
+   </Global>
+   <ECUs attCount="3">
+      <ECU>
+         <Name>ELP_ElithionPack</Name>
+         <NodeIndex>1</NodeIndex>
+         <Generic></Generic>
+      </ECU>
+      <ECU>
+         <Name>VCU_03</Name>
+         <NodeIndex>2</NodeIndex>
+         <Generic>
+            <ECUVar attName="En">
+               <InportDefault>0</InportDefault>
+               <Logic>-</Logic>
+               <Source>TRC</Source>
+               <TN>VCU_03_Enable</TN>
+               <DN>VCU_03</DN>
+            </ECUVar>
+         </Generic>
+      </ECU>
+      <ECU>
+         <Name>Vector__XXX</Name>
+         <NodeIndex>3</NodeIndex>
+         <Generic></Generic>
+      </ECU>
+   </ECUs>
+   <Msgs attCount="6">
+      <Msg ID="1586" Name="ELP_ContactorRequest" DBCName="ELP_ContactorRequest" DBCID="1586">
+         <ECU>VCU_03</ECU>
+         <RECU>ELP_ElithionPack,VCU_03</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>1</Len>
+         <Dir>2</Dir>
+         <Vars attCount="0"/>
+         <TX>
+            <Generic>
+               <TXVar attName="CEn">
+                  <TN>ELP_ContactorRequest_CheckEnable</TN>
+                  <DN>CheckEnable</DN>
+               </TXVar>
+               <TXVar attName="En">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>ELP_ContactorRequest_Enable</TN>
+                  <DN>Enable</DN>
+               </TXVar>
+               <TXVar attName="Cyclic">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>ELP_ContactorRequest_PeriodicalOn</TN>
+                  <DN>PeriodicalOn</DN>
+               </TXVar>
+               <TXVar attName="Kout">
+                  <TN>ELP_ContactorRequest_Kickout</TN>
+                  <DN>Kickout</DN>
+                  <Type>Button</Type>
+               </TXVar>
+               <TXVar attName="Delay">
+                  <TN>ELP_ContactorRequest_DelayTime</TN>
+                  <DN>DelayTime</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="Status">
+                  <TN>ELP_ContactorRequest_status</TN>
+                  <DN>ELP_ContactorRequest_status</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="CycleTime">
+                  <TN>ELP_ContactorRequest_CycleTime</TN>
+                  <DN>CycleTime</DN>
+                  <Type>Input</Type>
+               </TXVar>
+            </Generic>
+            <ERD>
+               <A>OFF</A>
+               <ERDTRC>
+                  <A>OFF</A>
+                  <ByteMap attIdx="1">
+                     <TN>ELP_ContactorRequest_RAW_byte_1</TN>
+                     <DN>RAWswitch_1</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="2">
+                     <TN>ELP_ContactorRequest_RAW_byte_2</TN>
+                     <DN>RAWswitch_2</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="3">
+                     <TN>ELP_ContactorRequest_RAW_byte_3</TN>
+                     <DN>RAWswitch_3</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="4">
+                     <TN>ELP_ContactorRequest_RAW_byte_4</TN>
+                     <DN>RAWswitch_4</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="5">
+                     <TN>ELP_ContactorRequest_RAW_byte_5</TN>
+                     <DN>RAWswitch_5</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="6">
+                     <TN>ELP_ContactorRequest_RAW_byte_6</TN>
+                     <DN>RAWswitch_6</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="7">
+                     <TN>ELP_ContactorRequest_RAW_byte_7</TN>
+                     <DN>RAWswitch_7</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="8">
+                     <TN>ELP_ContactorRequest_RAW_byte_8</TN>
+                     <DN>RAWswitch_8</DN>
+                  </ByteMap>
+               </ERDTRC>
+               <Switch>
+                  <A>OFF</A>
+                  <TN>ELP_ContactorRequest_RAW_switch</TN>
+                  <DN>RAWswitch</DN>
+               </Switch>
+            </ERD>
+            <RDD>
+               <A>OFF</A>
+            </RDD>
+         </TX>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>ELP_ContactorRequest_ID</TN>
+                  <DN>ELP_ContactorRequest_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>ELP_ContactorRequest_Length</TN>
+                  <DN>ELP_ContactorRequest_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>ELP_ContactorRequest_IDFormat</TN>
+                  <DN>ELP_ContactorRequest_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>ELP_ContactorRequest_status</TN>
+                  <DN>ELP_ContactorRequest_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>ELP_ContactorRequest_time</TN>
+                  <DN>ELP_ContactorRequest_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>ELP_ContactorRequest_dt</TN>
+                  <DN>ELP_ContactorRequest_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>ELP_ContactorRequest_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="1">
+            <Sgn attName="ELP_Contactor" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="ELP_Contactor"/>
+                        <SgnTXVar attName="GW" attValue="ELP_Contactor_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="ELP_Contactor_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="ELP_Contactor_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="ELP_Contactor_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="ELP_Contactor_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_Contactor"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="1572" Name="ELP_CurrentInfo" DBCName="ELP_CurrentInfo" DBCID="1572">
+         <ECU>ELP_ElithionPack</ECU>
+         <RECU>VCU_03</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>6</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>ELP_CurrentInfo_ID</TN>
+                  <DN>ELP_CurrentInfo_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>ELP_CurrentInfo_Length</TN>
+                  <DN>ELP_CurrentInfo_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>ELP_CurrentInfo_IDFormat</TN>
+                  <DN>ELP_CurrentInfo_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>ELP_CurrentInfo_status</TN>
+                  <DN>ELP_CurrentInfo_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>ELP_CurrentInfo_time</TN>
+                  <DN>ELP_CurrentInfo_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>ELP_CurrentInfo_dt</TN>
+                  <DN>ELP_CurrentInfo_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>ELP_CurrentInfo_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="3">
+            <Sgn attName="ELP_DischargeCurrentMax_A" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_DischargeCurrentMax_A"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_ChargeCurrentMax_A" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_ChargeCurrentMax_A"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_PackCurrent_A" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_PackCurrent_A"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="1574" Name="ELP_SOCInfo" DBCName="ELP_SOCInfo" DBCID="1574">
+         <ECU>ELP_ElithionPack</ECU>
+         <RECU>VCU_03</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>7</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>ELP_SOCInfo_ID</TN>
+                  <DN>ELP_SOCInfo_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>ELP_SOCInfo_Length</TN>
+                  <DN>ELP_SOCInfo_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>ELP_SOCInfo_IDFormat</TN>
+                  <DN>ELP_SOCInfo_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>ELP_SOCInfo_status</TN>
+                  <DN>ELP_SOCInfo_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>ELP_SOCInfo_time</TN>
+                  <DN>ELP_SOCInfo_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>ELP_SOCInfo_dt</TN>
+                  <DN>ELP_SOCInfo_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>ELP_SOCInfo_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="5">
+            <Sgn attName="ELP_SOH_pc" attStartBit="48">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_SOH_pc"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_SOC2_pc" attStartBit="40">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_SOC2_pc"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_Capacity_Ah" attStartBit="24">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_Capacity_Ah"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_DOD_Ah" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_DOD_Ah"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_SOC_pc" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_SOC_pc"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="1570" Name="ELP_StateInfo" DBCName="ELP_StateInfo" DBCID="1570">
+         <ECU>ELP_ElithionPack</ECU>
+         <RECU>VCU_03,Vector__XXX</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>7</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>ELP_StateInfo_ID</TN>
+                  <DN>ELP_StateInfo_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>ELP_StateInfo_Length</TN>
+                  <DN>ELP_StateInfo_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>ELP_StateInfo_IDFormat</TN>
+                  <DN>ELP_StateInfo_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>ELP_StateInfo_status</TN>
+                  <DN>ELP_StateInfo_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>ELP_StateInfo_time</TN>
+                  <DN>ELP_StateInfo_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>ELP_StateInfo_dt</TN>
+                  <DN>ELP_StateInfo_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>ELP_StateInfo_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="10">
+            <Sgn attName="ELP_WarningFlags" attStartBit="48">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_WarningFlags"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_LevelFaultFlags" attStartBit="40">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_LevelFaultFlags"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_FltCodeStored_uint8" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_FltCodeStored_uint8"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_Flags_uint8" attStartBit="24">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_Flags_uint8"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_CountdownTm_s" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_CountdownTm_s"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_BmsFault" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_BmsFault"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_ContactorK1" attStartBit="1">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_ContactorK1"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_ContactorK2" attStartBit="2">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_ContactorK2"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_ContactorK3" attStartBit="3">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_ContactorK3"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_RelayFault" attStartBit="4">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_RelayFault"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="1575" Name="ELP_TemperatureInfo" DBCName="ELP_TemperatureInfo" DBCID="1575">
+         <ECU>ELP_ElithionPack</ECU>
+         <RECU>VCU_03</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>6</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>ELP_TemperatureInfo_ID</TN>
+                  <DN>ELP_TemperatureInfo_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>ELP_TemperatureInfo_Length</TN>
+                  <DN>ELP_TemperatureInfo_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>ELP_TemperatureInfo_IDFormat</TN>
+                  <DN>ELP_TemperatureInfo_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>ELP_TemperatureInfo_status</TN>
+                  <DN>ELP_TemperatureInfo_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>ELP_TemperatureInfo_time</TN>
+                  <DN>ELP_TemperatureInfo_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>ELP_TemperatureInfo_dt</TN>
+                  <DN>ELP_TemperatureInfo_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>ELP_TemperatureInfo_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="5">
+            <Sgn attName="ELP_CellIdTempMax_num" attStartBit="40">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_CellIdTempMax_num"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_SensorTempMax_degC" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_SensorTempMax_degC"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_CellIdMinTemp_num" attStartBit="24">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_CellIdMinTemp_num"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_SensorTempMin_degC" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_SensorTempMin_degC"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_PackAvgTemp_degC" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_PackAvgTemp_degC"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="1571" Name="ELP_VoltageInfo" DBCName="ELP_VoltageInfo" DBCID="1571">
+         <ECU>ELP_ElithionPack</ECU>
+         <RECU>VCU_03</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>6</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>ELP_VoltageInfo_ID</TN>
+                  <DN>ELP_VoltageInfo_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>ELP_VoltageInfo_Length</TN>
+                  <DN>ELP_VoltageInfo_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>ELP_VoltageInfo_IDFormat</TN>
+                  <DN>ELP_VoltageInfo_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>ELP_VoltageInfo_status</TN>
+                  <DN>ELP_VoltageInfo_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>ELP_VoltageInfo_time</TN>
+                  <DN>ELP_VoltageInfo_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>ELP_VoltageInfo_dt</TN>
+                  <DN>ELP_VoltageInfo_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>ELP_VoltageInfo_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="5">
+            <Sgn attName="ELP_CellIdVoltageMax_num" attStartBit="40">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_CellIdVoltageMax_num"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_CellVoltageMax_V" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_CellVoltageMax_V"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_CellIdVoltageMin_num" attStartBit="24">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_CellIdVoltageMin_num"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_CellVoltageMin_V" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_CellVoltageMin_V"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="ELP_PackVoltage_V" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="ELP_PackVoltage_V"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+   </Msgs>
+</Settings>

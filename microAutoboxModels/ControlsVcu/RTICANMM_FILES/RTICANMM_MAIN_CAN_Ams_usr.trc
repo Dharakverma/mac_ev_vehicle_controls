@@ -1,0 +1,1217 @@
+
+
+-- START@RTICANMM_MAIN_CAN_Ams_DS1401_2_1_1
+
+
+
+group "CAN_Ams" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMM_CTL_SETUP_Ams_ID
+{
+type: UINT(8)
+alias: "Variation"
+flags: OUTPUT|READONLY
+desc: "current Variation of Ams"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_NL
+{
+type: UINT(32)
+alias: "NumLostMsgs"
+flags: OUTPUT|READONLY
+desc: "Number of lost messages"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_TRAFFIC
+{
+type: UINT(8)
+alias: "Traffic"
+flags: OUTPUT|READONLY
+desc: "Traffic"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_GEIN
+{
+type: UINT(8)
+alias: "GlobalEnable"
+flags: PARAM
+desc: "Enable CAN_Ams"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Ams_TXGEIN
+{
+type: UINT(8)
+alias: "GlobalEnableTX"
+flags: PARAM
+desc: "Enable TX of CAN_Ams"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Ams_MAXMSGPERSTEP
+{
+type: INT(32)
+alias: "MaxMessagesPerStep"
+flags: PARAM
+desc: "MaxMessagesPerStep"
+unit: ""
+range: <0; 100>
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_TXEEIE[0]
+{
+type: UINT(8)
+alias: "VCU_03_Enable"
+flags: PARAM
+desc: "Enable VCU_03"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+
+group "ELP_ContactorRequest" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Ams_RX_Msg_1_Sgn_1
+{
+type: UINT(8)
+alias: "ELP_Contactor"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_MIDRX[5]
+{
+type: UINT(32)
+alias: "ELP_ContactorRequest_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 1586
+}
+
+
+
+
+CANMMCAN_Ams_MIDFRX[5]
+{
+type: UINT(8)
+alias: "ELP_ContactorRequest_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXLEN[5]
+{
+type: UINT(8)
+alias: "ELP_ContactorRequest_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 1
+}
+
+
+
+
+CANMMCAN_Ams_RXsta[5]
+{
+type: UINT(8)
+alias: "ELP_ContactorRequest_status"
+flags: OUTPUT|READONLY
+desc: "ELP_ContactorRequest Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXdt[5]
+{
+type: flt(64,IEEE)
+alias: "ELP_ContactorRequest_dt"
+flags: OUTPUT|READONLY
+desc: "ELP_ContactorRequest DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXt[5]
+{
+type: flt(64,IEEE)
+alias: "ELP_ContactorRequest_time"
+flags: OUTPUT|READONLY
+desc: "ELP_ContactorRequest Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+group "TX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Ams_WBS[0]
+{
+type: UINT(8)
+alias: "ELP_ContactorRequest_CheckEnable"
+flags: OUTPUT|READONLY
+desc: "Check enabled ELP_ContactorRequest"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_TXDT[0]
+{
+type: flt(64,IEEE)
+alias: "ELP_ContactorRequest_DelayTime"
+flags: OUTPUT|READONLY
+desc: "DelayTime ELP_ContactorRequest"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_TXsta[0]
+{
+type: UINT(8)
+alias: "ELP_ContactorRequest_status"
+flags: OUTPUT|READONLY
+desc: "ELP_ContactorRequest Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_TXEIN[0]
+{
+type: UINT(8)
+alias: "ELP_ContactorRequest_Enable"
+flags: PARAM
+desc: "Enable ELP_ContactorRequest"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Ams_TXCIE[0]
+{
+type: UINT(8)
+alias: "ELP_ContactorRequest_PeriodicalOn"
+flags: PARAM
+desc: "Activate cyclic transmission for ELP_ContactorRequest"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMCAN_Ams_TXKIEX[0]
+{
+type: UINT(8)
+alias: "ELP_ContactorRequest_Kickout"
+flags: PARAM
+desc: "Kickout ELP_ContactorRequest"
+unit: ""
+range: <0; 1>
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_TXCT[0]
+{
+type: flt(64,IEEE)
+alias: "ELP_ContactorRequest_CycleTime"
+flags: PARAM
+desc: "CycleTime ELP_ContactorRequest"
+unit: "s"
+range: <0; 1000>
+value: 0
+}
+
+
+
+
+
+endgroup -- block-group "TX"
+
+
+
+endgroup -- block-group "ELP_ContactorRequest"
+
+
+
+group "ELP_CurrentInfo" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Ams_RX_Msg_2_Sgn_1
+{
+type: UINT(16)
+alias: "ELP_DischargeCurrentMax_A"
+flags: OUTPUT|READONLY
+desc: "Maximum current available for discharging"
+unit: "A"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_2_Sgn_2
+{
+type: UINT(16)
+alias: "ELP_ChargeCurrentMax_A"
+flags: OUTPUT|READONLY
+desc: "Maximum current acceptable for charging"
+unit: "A"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_2_Sgn_3
+{
+type: INT(16)
+alias: "ELP_PackCurrent_A"
+flags: OUTPUT|READONLY
+desc: "Peak current +Ve is out of pack"
+unit: "A"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_MIDRX[2]
+{
+type: UINT(32)
+alias: "ELP_CurrentInfo_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 1572
+}
+
+
+
+
+CANMMCAN_Ams_MIDFRX[2]
+{
+type: UINT(8)
+alias: "ELP_CurrentInfo_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXLEN[2]
+{
+type: UINT(8)
+alias: "ELP_CurrentInfo_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 6
+}
+
+
+
+
+CANMMCAN_Ams_RXsta[2]
+{
+type: UINT(8)
+alias: "ELP_CurrentInfo_status"
+flags: OUTPUT|READONLY
+desc: "ELP_CurrentInfo Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXdt[2]
+{
+type: flt(64,IEEE)
+alias: "ELP_CurrentInfo_dt"
+flags: OUTPUT|READONLY
+desc: "ELP_CurrentInfo DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXt[2]
+{
+type: flt(64,IEEE)
+alias: "ELP_CurrentInfo_time"
+flags: OUTPUT|READONLY
+desc: "ELP_CurrentInfo Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "ELP_CurrentInfo"
+
+
+
+group "ELP_SOCInfo" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Ams_RX_Msg_3_Sgn_1
+{
+type: INT(8)
+alias: "ELP_SOH_pc"
+flags: OUTPUT|READONLY
+desc: "State Of Charge of 2nd pack (such as the vehicle's original pack) [%],   When deeply discharged, its value does not go below 0"
+unit: "pc"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_3_Sgn_2
+{
+type: INT(8)
+alias: "ELP_SOC2_pc"
+flags: OUTPUT|READONLY
+desc: "State Of Charge of 2nd pack (such as the vehicle's original pack) [%], When deeply discharged, its value does not go below 0"
+unit: "pc"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_3_Sgn_3
+{
+type: UINT(16)
+alias: "ELP_Capacity_Ah"
+flags: OUTPUT|READONLY
+desc: "Actual capacity of the pack, (Ah)"
+unit: "Ah"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_3_Sgn_4
+{
+type: UINT(16)
+alias: "ELP_DOD_Ah"
+flags: OUTPUT|READONLY
+desc: "Depth of discharge, when deeply discharged its value may exceed capacity (Ah)"
+unit: "Ah"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_3_Sgn_5
+{
+type: UINT(8)
+alias: "ELP_SOC_pc"
+flags: OUTPUT|READONLY
+desc: "State of Charge"
+unit: "pc"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_MIDRX[3]
+{
+type: UINT(32)
+alias: "ELP_SOCInfo_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 1574
+}
+
+
+
+
+CANMMCAN_Ams_MIDFRX[3]
+{
+type: UINT(8)
+alias: "ELP_SOCInfo_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXLEN[3]
+{
+type: UINT(8)
+alias: "ELP_SOCInfo_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 7
+}
+
+
+
+
+CANMMCAN_Ams_RXsta[3]
+{
+type: UINT(8)
+alias: "ELP_SOCInfo_status"
+flags: OUTPUT|READONLY
+desc: "ELP_SOCInfo Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXdt[3]
+{
+type: flt(64,IEEE)
+alias: "ELP_SOCInfo_dt"
+flags: OUTPUT|READONLY
+desc: "ELP_SOCInfo DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXt[3]
+{
+type: flt(64,IEEE)
+alias: "ELP_SOCInfo_time"
+flags: OUTPUT|READONLY
+desc: "ELP_SOCInfo Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "ELP_SOCInfo"
+
+
+
+group "ELP_StateInfo" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_1
+{
+type: UINT(8)
+alias: "ELP_WarningFlags"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_2
+{
+type: UINT(8)
+alias: "ELP_LevelFaultFlags"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_3
+{
+type: UINT(8)
+alias: "ELP_FltCodeStored_uint8"
+flags: OUTPUT|READONLY
+desc: "Fault code, stored (see eLithion documenation0"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_4
+{
+type: UINT(8)
+alias: "ELP_Flags_uint8"
+flags: OUTPUT|READONLY
+desc: "Bit flags of operation (see eLithion documentation)"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_5
+{
+type: UINT(16)
+alias: "ELP_CountdownTm_s"
+flags: OUTPUT|READONLY
+desc: "Countdown time (s) to next state change"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_6
+{
+type: UINT(8)
+alias: "ELP_BmsFault"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_7
+{
+type: UINT(8)
+alias: "ELP_ContactorK1"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_8
+{
+type: UINT(8)
+alias: "ELP_ContactorK2"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_9
+{
+type: UINT(8)
+alias: "ELP_ContactorK3"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_4_Sgn_10
+{
+type: UINT(8)
+alias: "ELP_RelayFault"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_MIDRX[0]
+{
+type: UINT(32)
+alias: "ELP_StateInfo_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 1570
+}
+
+
+
+
+CANMMCAN_Ams_MIDFRX[0]
+{
+type: UINT(8)
+alias: "ELP_StateInfo_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXLEN[0]
+{
+type: UINT(8)
+alias: "ELP_StateInfo_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 7
+}
+
+
+
+
+CANMMCAN_Ams_RXsta[0]
+{
+type: UINT(8)
+alias: "ELP_StateInfo_status"
+flags: OUTPUT|READONLY
+desc: "ELP_StateInfo Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXdt[0]
+{
+type: flt(64,IEEE)
+alias: "ELP_StateInfo_dt"
+flags: OUTPUT|READONLY
+desc: "ELP_StateInfo DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXt[0]
+{
+type: flt(64,IEEE)
+alias: "ELP_StateInfo_time"
+flags: OUTPUT|READONLY
+desc: "ELP_StateInfo Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "ELP_StateInfo"
+
+
+
+group "ELP_TemperatureInfo" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Ams_RX_Msg_5_Sgn_1
+{
+type: UINT(8)
+alias: "ELP_CellIdTempMax_num"
+flags: OUTPUT|READONLY
+desc: "ID of the cell (or block of cells) that has the highest temperature"
+unit: "num"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_5_Sgn_2
+{
+type: INT(8)
+alias: "ELP_SensorTempMax_degC"
+flags: OUTPUT|READONLY
+desc: "Temperatures [°C] of hottest sensors"
+unit: "degC"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_5_Sgn_3
+{
+type: UINT(8)
+alias: "ELP_CellIdMinTemp_num"
+flags: OUTPUT|READONLY
+desc: "ID of the cell (or block of cells) that has the lowest temperature"
+unit: "num"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_5_Sgn_4
+{
+type: INT(8)
+alias: "ELP_SensorTempMin_degC"
+flags: OUTPUT|READONLY
+desc: "Temperatures [°C] of coldest sensors"
+unit: "degC"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_5_Sgn_5
+{
+type: INT(8)
+alias: "ELP_PackAvgTemp_degC"
+flags: OUTPUT|READONLY
+desc: " Average pack temperature,e [°C]"
+unit: "degC"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_MIDRX[4]
+{
+type: UINT(32)
+alias: "ELP_TemperatureInfo_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 1575
+}
+
+
+
+
+CANMMCAN_Ams_MIDFRX[4]
+{
+type: UINT(8)
+alias: "ELP_TemperatureInfo_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXLEN[4]
+{
+type: UINT(8)
+alias: "ELP_TemperatureInfo_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 6
+}
+
+
+
+
+CANMMCAN_Ams_RXsta[4]
+{
+type: UINT(8)
+alias: "ELP_TemperatureInfo_status"
+flags: OUTPUT|READONLY
+desc: "ELP_TemperatureInfo Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXdt[4]
+{
+type: flt(64,IEEE)
+alias: "ELP_TemperatureInfo_dt"
+flags: OUTPUT|READONLY
+desc: "ELP_TemperatureInfo DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXt[4]
+{
+type: flt(64,IEEE)
+alias: "ELP_TemperatureInfo_time"
+flags: OUTPUT|READONLY
+desc: "ELP_TemperatureInfo Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "ELP_TemperatureInfo"
+
+
+
+group "ELP_VoltageInfo" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMCAN_Ams_RX_Msg_6_Sgn_1
+{
+type: UINT(8)
+alias: "ELP_CellIdVoltageMax_num"
+flags: OUTPUT|READONLY
+desc: "ID of the cell (or block of cells) that has the highest voltage"
+unit: "num"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_6_Sgn_2
+{
+type: flt(64,IEEE)
+alias: "ELP_CellVoltageMax_V"
+flags: OUTPUT|READONLY
+desc: "Voltages [V] of  most charged cells or blocks of cells,"
+unit: "V"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_6_Sgn_3
+{
+type: UINT(8)
+alias: "ELP_CellIdVoltageMin_num"
+flags: OUTPUT|READONLY
+desc: "ID of the cell (or block of cells) that has the lowest voltage"
+unit: "num"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_6_Sgn_4
+{
+type: flt(64,IEEE)
+alias: "ELP_CellVoltageMin_V"
+flags: OUTPUT|READONLY
+desc: "Voltages [V] of least charged  cells or blocks of cells"
+unit: "V"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RX_Msg_6_Sgn_5
+{
+type: UINT(16)
+alias: "ELP_PackVoltage_V"
+flags: OUTPUT|READONLY
+desc: "Total voltage of pack [V]"
+unit: "V"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_MIDRX[1]
+{
+type: UINT(32)
+alias: "ELP_VoltageInfo_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 1571
+}
+
+
+
+
+CANMMCAN_Ams_MIDFRX[1]
+{
+type: UINT(8)
+alias: "ELP_VoltageInfo_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXLEN[1]
+{
+type: UINT(8)
+alias: "ELP_VoltageInfo_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 6
+}
+
+
+
+
+CANMMCAN_Ams_RXsta[1]
+{
+type: UINT(8)
+alias: "ELP_VoltageInfo_status"
+flags: OUTPUT|READONLY
+desc: "ELP_VoltageInfo Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXdt[1]
+{
+type: flt(64,IEEE)
+alias: "ELP_VoltageInfo_dt"
+flags: OUTPUT|READONLY
+desc: "ELP_VoltageInfo DeltaTime"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMCAN_Ams_RXt[1]
+{
+type: flt(64,IEEE)
+alias: "ELP_VoltageInfo_time"
+flags: OUTPUT|READONLY
+desc: "ELP_VoltageInfo Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "ELP_VoltageInfo"
+
+
+
+group "RT" -- subsystem-group
+{
+     flags: COLLAPSED | HIDDEN
+}
+
+
+
+group "FreeRawMessages" -- subsystem-group
+{
+     flags: COLLAPSED | HIDDEN
+}
+
+
+
+endgroup -- block-group "FreeRawMessages"
+
+
+
+endgroup -- block-group "RT"
+
+
+
+endgroup -- block-group "CAN_Ams"
+
+
+-- END@RTICANMM_MAIN_CAN_Ams_DS1401_2_1_1

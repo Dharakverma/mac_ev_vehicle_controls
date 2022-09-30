@@ -1,0 +1,81 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   9 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c1_Tractive_Motor_Ring_Single_Motor"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_NORMAL_OPERATION"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "NORMAL_OPERATION"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "was_NORMAL_OPERATION"\
+      Description  "StatePrevActiveChild"\
+      SFName       ""\
+      Path         "NORMAL_OPERATION"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_SHUTDOWN"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "NORMAL_OPERATION.SHUTDOWN"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_OPERATIONAL"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "NORMAL_OPERATION.OPERATIONAL"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_STARTUP_LV"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "NORMAL_OPERATION.OPERATIONAL.STARTUP_LV"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_RUNNING"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "NORMAL_OPERATION.OPERATIONAL.RUNNING"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_SetpointSettingsTorqueControl"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "NORMAL_OPERATION.OPERATIONAL.RUNNING.SetpointSettingsTorqueControl"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_STARTUP_HV"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "NORMAL_OPERATION.OPERATIONAL.STARTUP_HV"\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

@@ -1,0 +1,1130 @@
+<Type>MainBlock</Type>
+<GenInfo>
+   <Ver>5.4.737888.359837963</Ver>
+   <Var>1</Var>
+   <CANName>CAN_Driver</CANName>
+   <CANUniqueID>4</CANUniqueID>
+   <CANFDSupport>OFF</CANFDSupport>
+   <CapMsgs>
+      <A>OFF</A>
+   </CapMsgs>
+   <GW>OFF</GW>
+   <J1939>OFF</J1939>
+   <CRCs attCount="0"/>
+   <NoFreeIds>0</NoFreeIds>
+   <NoRTTMsgs>0</NoRTTMsgs>
+</GenInfo>
+<TRCInfos>
+   <TRCPrefixGlobal>BusSystems/CAN/CAN_Driver</TRCPrefixGlobal>
+   <TRCPrefixMsg>
+      <RX>BusSystems/CAN/CAN_Driver/%MsgName%/RX/</RX>
+      <TX>BusSystems/CAN/CAN_Driver/%MsgName%/TX/</TX>
+      <Capt>BusSystems/CAN/CAN_Driver/%MsgName%/</Capt>
+   </TRCPrefixMsg>
+</TRCInfos>
+<Settings>
+   <Global>
+      <Generic>
+         <GlobalVar attName="En">
+            <InportDefault>0</InportDefault>
+            <Logic>-</Logic>
+            <Source>TRC</Source>
+            <TN>GlobalEnable</TN>
+            <DN>GlobalEnable</DN>
+         </GlobalVar>
+         <GlobalVar attName="EnTx">
+            <InportDefault>0</InportDefault>
+            <Logic>-</Logic>
+            <Source>TRC</Source>
+            <TN>GlobalEnableTX</TN>
+            <DN>GlobalEnableTX</DN>
+         </GlobalVar>
+         <GlobalVar attName="Var">
+            <TN>Variation</TN>
+            <DN>Variation</DN>
+         </GlobalVar>
+         <GlobalVar attName="MaxMessagesPerStep">
+            <TN>MaxMessagesPerStep</TN>
+            <DN>Maximum TX Messages per SampleStep</DN>
+         </GlobalVar>
+      </Generic>
+   </Global>
+   <ECUs attCount="5">
+      <ECU>
+         <Name>CCU</Name>
+         <NodeIndex>1</NodeIndex>
+         <Generic></Generic>
+      </ECU>
+      <ECU>
+         <Name>DCU</Name>
+         <NodeIndex>2</NodeIndex>
+         <Generic></Generic>
+      </ECU>
+      <ECU>
+         <Name>PIU</Name>
+         <NodeIndex>3</NodeIndex>
+         <Generic></Generic>
+      </ECU>
+      <ECU>
+         <Name>VCU</Name>
+         <NodeIndex>4</NodeIndex>
+         <Generic>
+            <ECUVar attName="En">
+               <InportDefault>0</InportDefault>
+               <Logic>-</Logic>
+               <Source>TRC</Source>
+               <TN>VCU_Enable</TN>
+               <DN>VCU</DN>
+            </ECUVar>
+         </Generic>
+      </ECU>
+      <ECU>
+         <Name>Vector__XXX</Name>
+         <NodeIndex>5</NodeIndex>
+         <Generic></Generic>
+      </ECU>
+   </ECUs>
+   <Msgs attCount="5">
+      <Msg ID="514" Name="CoolingLoopModes" DBCName="CoolingLoopModes" DBCID="514">
+         <ECU>VCU</ECU>
+         <RECU>CCU</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>2</Len>
+         <Dir>2</Dir>
+         <Vars attCount="0"/>
+         <TX>
+            <Generic>
+               <TXVar attName="CEn">
+                  <TN>CoolingLoopModes_CheckEnable</TN>
+                  <DN>CheckEnable</DN>
+               </TXVar>
+               <TXVar attName="En">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>CoolingLoopModes_Enable</TN>
+                  <DN>Enable</DN>
+               </TXVar>
+               <TXVar attName="Cyclic">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>CoolingLoopModes_PeriodicalOn</TN>
+                  <DN>PeriodicalOn</DN>
+               </TXVar>
+               <TXVar attName="Kout">
+                  <TN>CoolingLoopModes_Kickout</TN>
+                  <DN>Kickout</DN>
+                  <Type>Button</Type>
+               </TXVar>
+               <TXVar attName="Delay">
+                  <TN>CoolingLoopModes_DelayTime</TN>
+                  <DN>DelayTime</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="Status">
+                  <TN>CoolingLoopModes_status</TN>
+                  <DN>CoolingLoopModes_status</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="CycleTime">
+                  <TN>CoolingLoopModes_CycleTime</TN>
+                  <DN>CycleTime</DN>
+                  <Type>Input</Type>
+               </TXVar>
+            </Generic>
+            <ERD>
+               <A>OFF</A>
+               <ERDTRC>
+                  <A>OFF</A>
+                  <ByteMap attIdx="1">
+                     <TN>CoolingLoopModes_RAW_byte_1</TN>
+                     <DN>RAWswitch_1</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="2">
+                     <TN>CoolingLoopModes_RAW_byte_2</TN>
+                     <DN>RAWswitch_2</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="3">
+                     <TN>CoolingLoopModes_RAW_byte_3</TN>
+                     <DN>RAWswitch_3</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="4">
+                     <TN>CoolingLoopModes_RAW_byte_4</TN>
+                     <DN>RAWswitch_4</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="5">
+                     <TN>CoolingLoopModes_RAW_byte_5</TN>
+                     <DN>RAWswitch_5</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="6">
+                     <TN>CoolingLoopModes_RAW_byte_6</TN>
+                     <DN>RAWswitch_6</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="7">
+                     <TN>CoolingLoopModes_RAW_byte_7</TN>
+                     <DN>RAWswitch_7</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="8">
+                     <TN>CoolingLoopModes_RAW_byte_8</TN>
+                     <DN>RAWswitch_8</DN>
+                  </ByteMap>
+               </ERDTRC>
+               <Switch>
+                  <A>OFF</A>
+                  <TN>CoolingLoopModes_RAW_switch</TN>
+                  <DN>RAWswitch</DN>
+               </Switch>
+            </ERD>
+            <RDD>
+               <A>OFF</A>
+            </RDD>
+         </TX>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>CoolingLoopModes_ID</TN>
+                  <DN>CoolingLoopModes_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>CoolingLoopModes_Length</TN>
+                  <DN>CoolingLoopModes_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>CoolingLoopModes_IDFormat</TN>
+                  <DN>CoolingLoopModes_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>CoolingLoopModes_status</TN>
+                  <DN>CoolingLoopModes_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>CoolingLoopModes_time</TN>
+                  <DN>CoolingLoopModes_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>CoolingLoopModes_dt</TN>
+                  <DN>CoolingLoopModes_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>CoolingLoopModes_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="5">
+            <Sgn attName="InverterLoopFanMode" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="InverterLoopFanMode"/>
+                        <SgnTXVar attName="GW" attValue="InverterLoopFanMode_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="InverterLoopFanMode_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="InverterLoopFanMode_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="InverterLoopFanMode_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="InverterLoopFanMode_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="InverterLoopFanMode"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="InverterLoopPumpMode" attStartBit="3">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="InverterLoopPumpMode"/>
+                        <SgnTXVar attName="GW" attValue="InverterLoopPumpMode_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="InverterLoopPumpMode_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="InverterLoopPumpMode_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="InverterLoopPumpMode_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="InverterLoopPumpMode_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="InverterLoopPumpMode"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="SpeakerRequest" attStartBit="6">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="SpeakerRequest"/>
+                        <SgnTXVar attName="GW" attValue="SpeakerRequest_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="SpeakerRequest_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="SpeakerRequest_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="SpeakerRequest_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="SpeakerRequest_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="SpeakerRequest"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="MotorLoopFanMode" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="MotorLoopFanMode"/>
+                        <SgnTXVar attName="GW" attValue="MotorLoopFanMode_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="MotorLoopFanMode_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="MotorLoopFanMode_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="MotorLoopFanMode_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="MotorLoopFanMode_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="MotorLoopFanMode"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="MotorLoopPumpMode" attStartBit="11">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="MotorLoopPumpMode"/>
+                        <SgnTXVar attName="GW" attValue="MotorLoopPumpMode_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="MotorLoopPumpMode_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="MotorLoopPumpMode_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="MotorLoopPumpMode_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="MotorLoopPumpMode_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="MotorLoopPumpMode"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="513" Name="CoolingLoopsData" DBCName="CoolingLoopsData" DBCID="513">
+         <ECU>CCU</ECU>
+         <RECU>VCU</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>7</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>CoolingLoopsData_ID</TN>
+                  <DN>CoolingLoopsData_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>CoolingLoopsData_Length</TN>
+                  <DN>CoolingLoopsData_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>CoolingLoopsData_IDFormat</TN>
+                  <DN>CoolingLoopsData_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>CoolingLoopsData_status</TN>
+                  <DN>CoolingLoopsData_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>CoolingLoopsData_time</TN>
+                  <DN>CoolingLoopsData_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>CoolingLoopsData_dt</TN>
+                  <DN>CoolingLoopsData_dt</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="9">
+            <Sgn attName="InverterLoopFluidTemp" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="InverterLoopFluidTemp"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="MotorLoopFluidTemp" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="MotorLoopFluidTemp"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="InverterLoopPressure" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="InverterLoopPressure"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="MotorLoopPressure" attStartBit="23">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="MotorLoopPressure"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="InverterLoopTempSensorStatus" attStartBit="30">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="InverterLoopTempSensorStatus"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="MotorLoopTempSensorStatus" attStartBit="33">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="MotorLoopTempSensorStatus"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="InverterLoopPressureSensorStatus" attStartBit="36">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="InverterLoopPressureSensorStatus"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="MotorLoopPressureSensorStatus" attStartBit="39">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="MotorLoopPressureSensorStatus"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="MC_CoolingLoopsData" attStartBit="42">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="MC_CoolingLoopsData"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="257" Name="PedalPositions" DBCName="PedalPositions" DBCID="257">
+         <ECU>PIU</ECU>
+         <RECU>VCU</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>7</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>PedalPositions_ID</TN>
+                  <DN>PedalPositions_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>PedalPositions_Length</TN>
+                  <DN>PedalPositions_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>PedalPositions_IDFormat</TN>
+                  <DN>PedalPositions_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>PedalPositions_status</TN>
+                  <DN>PedalPositions_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>PedalPositions_time</TN>
+                  <DN>PedalPositions_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>PedalPositions_dt</TN>
+                  <DN>PedalPositions_dt</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="11">
+            <Sgn attName="BrakePedalPosition0" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="BrakePedalPosition0"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="BrakePedalPosition1" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="BrakePedalPosition1"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AcceleratorPedalPosition1" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AcceleratorPedalPosition1"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AcceleratorPedalPosition0" attStartBit="24">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AcceleratorPedalPosition0"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="DriveButton" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="DriveButton"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="Bpps0Status" attStartBit="34">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="Bpps0Status"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="Bpps1Status" attStartBit="37">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="Bpps1Status"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="Apps0Status" attStartBit="40">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="Apps0Status"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="Apps1Status" attStartBit="43">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="Apps1Status"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="BspdFault" attStartBit="46">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="BspdFault"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="MC_PedalPosition" attStartBit="48">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="MC_PedalPosition"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="1282" Name="TemperatureInfo" DBCName="TemperatureInfo" DBCID="1282">
+         <ECU>VCU</ECU>
+         <RECU>DCU,Vector__XXX</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>5</Len>
+         <Dir>2</Dir>
+         <Vars attCount="0"/>
+         <TX>
+            <Generic>
+               <TXVar attName="CEn">
+                  <TN>TemperatureInfo_CheckEnable</TN>
+                  <DN>CheckEnable</DN>
+               </TXVar>
+               <TXVar attName="En">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>TemperatureInfo_Enable</TN>
+                  <DN>Enable</DN>
+               </TXVar>
+               <TXVar attName="Cyclic">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>TemperatureInfo_PeriodicalOn</TN>
+                  <DN>PeriodicalOn</DN>
+               </TXVar>
+               <TXVar attName="Kout">
+                  <TN>TemperatureInfo_Kickout</TN>
+                  <DN>Kickout</DN>
+                  <Type>Button</Type>
+               </TXVar>
+               <TXVar attName="Delay">
+                  <TN>TemperatureInfo_DelayTime</TN>
+                  <DN>DelayTime</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="Status">
+                  <TN>TemperatureInfo_status</TN>
+                  <DN>TemperatureInfo_status</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="CycleTime">
+                  <TN>TemperatureInfo_CycleTime</TN>
+                  <DN>CycleTime</DN>
+                  <Type>Input</Type>
+               </TXVar>
+            </Generic>
+            <ERD>
+               <A>OFF</A>
+               <ERDTRC>
+                  <A>OFF</A>
+                  <ByteMap attIdx="1">
+                     <TN>TemperatureInfo_RAW_byte_1</TN>
+                     <DN>RAWswitch_1</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="2">
+                     <TN>TemperatureInfo_RAW_byte_2</TN>
+                     <DN>RAWswitch_2</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="3">
+                     <TN>TemperatureInfo_RAW_byte_3</TN>
+                     <DN>RAWswitch_3</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="4">
+                     <TN>TemperatureInfo_RAW_byte_4</TN>
+                     <DN>RAWswitch_4</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="5">
+                     <TN>TemperatureInfo_RAW_byte_5</TN>
+                     <DN>RAWswitch_5</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="6">
+                     <TN>TemperatureInfo_RAW_byte_6</TN>
+                     <DN>RAWswitch_6</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="7">
+                     <TN>TemperatureInfo_RAW_byte_7</TN>
+                     <DN>RAWswitch_7</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="8">
+                     <TN>TemperatureInfo_RAW_byte_8</TN>
+                     <DN>RAWswitch_8</DN>
+                  </ByteMap>
+               </ERDTRC>
+               <Switch>
+                  <A>OFF</A>
+                  <TN>TemperatureInfo_RAW_switch</TN>
+                  <DN>RAWswitch</DN>
+               </Switch>
+            </ERD>
+            <RDD>
+               <A>OFF</A>
+            </RDD>
+         </TX>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>TemperatureInfo_ID</TN>
+                  <DN>TemperatureInfo_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>TemperatureInfo_Length</TN>
+                  <DN>TemperatureInfo_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>TemperatureInfo_IDFormat</TN>
+                  <DN>TemperatureInfo_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>TemperatureInfo_status</TN>
+                  <DN>TemperatureInfo_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>TemperatureInfo_time</TN>
+                  <DN>TemperatureInfo_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>TemperatureInfo_dt</TN>
+                  <DN>TemperatureInfo_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>TemperatureInfo_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="5">
+            <Sgn attName="LeftFrontMotorTemperature" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="LeftFrontMotorTemperature"/>
+                        <SgnTXVar attName="GW" attValue="LeftFrontMotorTemperature_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="LeftFrontMotorTemperature_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="LeftFrontMotorTemperature_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="LeftFrontMotorTemperature_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="LeftFrontMotorTemperature_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="LeftFrontMotorTemperature"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="LeftRearMotorTemperature" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="LeftRearMotorTemperature"/>
+                        <SgnTXVar attName="GW" attValue="LeftRearMotorTemperature_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="LeftRearMotorTemperature_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="LeftRearMotorTemperature_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="LeftRearMotorTemperature_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="LeftRearMotorTemperature_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="LeftRearMotorTemperature"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="RightFrontMotorTemperature" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="RightFrontMotorTemperature"/>
+                        <SgnTXVar attName="GW" attValue="RightFrontMotorTemperature_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="RightFrontMotorTemperature_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="RightFrontMotorTemperature_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="RightFrontMotorTemperature_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="RightFrontMotorTemperature_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="RightFrontMotorTemperature"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="RightRearMotorTemperature" attStartBit="24">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="RightRearMotorTemperature"/>
+                        <SgnTXVar attName="GW" attValue="RightRearMotorTemperature_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="RightRearMotorTemperature_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="RightRearMotorTemperature_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="RightRearMotorTemperature_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="RightRearMotorTemperature_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="RightRearMotorTemperature"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="BatteryTemperature" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="BatteryTemperature"/>
+                        <SgnTXVar attName="GW" attValue="BatteryTemperature_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="BatteryTemperature_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="BatteryTemperature_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="BatteryTemperature_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="BatteryTemperature_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="BatteryTemperature"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="1283" Name="VehicleInfo" DBCName="VehicleInfo" DBCID="1283">
+         <ECU>VCU</ECU>
+         <RECU>DCU</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>5</Len>
+         <Dir>2</Dir>
+         <Vars attCount="0"/>
+         <TX>
+            <Generic>
+               <TXVar attName="CEn">
+                  <TN>VehicleInfo_CheckEnable</TN>
+                  <DN>CheckEnable</DN>
+               </TXVar>
+               <TXVar attName="En">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>VehicleInfo_Enable</TN>
+                  <DN>Enable</DN>
+               </TXVar>
+               <TXVar attName="Cyclic">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>VehicleInfo_PeriodicalOn</TN>
+                  <DN>PeriodicalOn</DN>
+               </TXVar>
+               <TXVar attName="Kout">
+                  <TN>VehicleInfo_Kickout</TN>
+                  <DN>Kickout</DN>
+                  <Type>Button</Type>
+               </TXVar>
+               <TXVar attName="Delay">
+                  <TN>VehicleInfo_DelayTime</TN>
+                  <DN>DelayTime</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="Status">
+                  <TN>VehicleInfo_status</TN>
+                  <DN>VehicleInfo_status</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="CycleTime">
+                  <TN>VehicleInfo_CycleTime</TN>
+                  <DN>CycleTime</DN>
+                  <Type>Input</Type>
+               </TXVar>
+            </Generic>
+            <ERD>
+               <A>OFF</A>
+               <ERDTRC>
+                  <A>OFF</A>
+                  <ByteMap attIdx="1">
+                     <TN>VehicleInfo_RAW_byte_1</TN>
+                     <DN>RAWswitch_1</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="2">
+                     <TN>VehicleInfo_RAW_byte_2</TN>
+                     <DN>RAWswitch_2</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="3">
+                     <TN>VehicleInfo_RAW_byte_3</TN>
+                     <DN>RAWswitch_3</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="4">
+                     <TN>VehicleInfo_RAW_byte_4</TN>
+                     <DN>RAWswitch_4</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="5">
+                     <TN>VehicleInfo_RAW_byte_5</TN>
+                     <DN>RAWswitch_5</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="6">
+                     <TN>VehicleInfo_RAW_byte_6</TN>
+                     <DN>RAWswitch_6</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="7">
+                     <TN>VehicleInfo_RAW_byte_7</TN>
+                     <DN>RAWswitch_7</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="8">
+                     <TN>VehicleInfo_RAW_byte_8</TN>
+                     <DN>RAWswitch_8</DN>
+                  </ByteMap>
+               </ERDTRC>
+               <Switch>
+                  <A>OFF</A>
+                  <TN>VehicleInfo_RAW_switch</TN>
+                  <DN>RAWswitch</DN>
+               </Switch>
+            </ERD>
+            <RDD>
+               <A>OFF</A>
+            </RDD>
+         </TX>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>VehicleInfo_ID</TN>
+                  <DN>VehicleInfo_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>VehicleInfo_Length</TN>
+                  <DN>VehicleInfo_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>VehicleInfo_IDFormat</TN>
+                  <DN>VehicleInfo_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>VehicleInfo_status</TN>
+                  <DN>VehicleInfo_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>VehicleInfo_time</TN>
+                  <DN>VehicleInfo_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>VehicleInfo_dt</TN>
+                  <DN>VehicleInfo_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>VehicleInfo_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="5">
+            <Sgn attName="MaximumPowerAvailablePercentage" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="MaximumPowerAvailablePercentage"/>
+                        <SgnTXVar attName="GW" attValue="MaximumPowerAvailablePercentage_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="MaximumPowerAvailablePercentage_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="MaximumPowerAvailablePercentage_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="MaximumPowerAvailablePercentage_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="MaximumPowerAvailablePercentage_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="MaximumPowerAvailablePercentage"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="SocPercentage" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="SocPercentage"/>
+                        <SgnTXVar attName="GW" attValue="SocPercentage_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="SocPercentage_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="SocPercentage_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="SocPercentage_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="SocPercentage_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="SocPercentage"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="VcuErrors" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="VcuErrors"/>
+                        <SgnTXVar attName="GW" attValue="VcuErrors_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="VcuErrors_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="VcuErrors_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="VcuErrors_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="VcuErrors_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="VcuErrors"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="VehicleSpeed" attStartBit="24">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="VehicleSpeed"/>
+                        <SgnTXVar attName="GW" attValue="VehicleSpeed_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="VehicleSpeed_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="VehicleSpeed_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="VehicleSpeed_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="VehicleSpeed_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="VehicleSpeed"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="VehicleStatus" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="VehicleStatus"/>
+                        <SgnTXVar attName="GW" attValue="VehicleStatus_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="VehicleStatus_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="VehicleStatus_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="VehicleStatus_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="VehicleStatus_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="VehicleStatus"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+   </Msgs>
+</Settings>

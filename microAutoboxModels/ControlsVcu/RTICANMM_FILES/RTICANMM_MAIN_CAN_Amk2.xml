@@ -1,0 +1,1165 @@
+<Type>MainBlock</Type>
+<GenInfo>
+   <Ver>5.4.737888.359837963</Ver>
+   <Var>1</Var>
+   <CANName>CAN_Amk2</CANName>
+   <CANUniqueID>2</CANUniqueID>
+   <CANFDSupport>OFF</CANFDSupport>
+   <CapMsgs>
+      <A>OFF</A>
+   </CapMsgs>
+   <GW>OFF</GW>
+   <J1939>OFF</J1939>
+   <CRCs attCount="0"/>
+   <NoFreeIds>0</NoFreeIds>
+   <NoRTTMsgs>0</NoRTTMsgs>
+</GenInfo>
+<TRCInfos>
+   <TRCPrefixGlobal>BusSystems/CAN/CAN_Amk2</TRCPrefixGlobal>
+   <TRCPrefixMsg>
+      <RX>BusSystems/CAN/CAN_Amk2/%MsgName%/RX/</RX>
+      <TX>BusSystems/CAN/CAN_Amk2/%MsgName%/TX/</TX>
+      <Capt>BusSystems/CAN/CAN_Amk2/%MsgName%/</Capt>
+   </TRCPrefixMsg>
+</TRCInfos>
+<Settings>
+   <Global>
+      <Generic>
+         <GlobalVar attName="En">
+            <InportDefault>0</InportDefault>
+            <Logic>-</Logic>
+            <Source>TRC</Source>
+            <TN>GlobalEnable</TN>
+            <DN>GlobalEnable</DN>
+         </GlobalVar>
+         <GlobalVar attName="EnTx">
+            <InportDefault>0</InportDefault>
+            <Logic>-</Logic>
+            <Source>TRC</Source>
+            <TN>GlobalEnableTX</TN>
+            <DN>GlobalEnableTX</DN>
+         </GlobalVar>
+         <GlobalVar attName="Var">
+            <TN>Variation</TN>
+            <DN>Variation</DN>
+         </GlobalVar>
+         <GlobalVar attName="MaxMessagesPerStep">
+            <TN>MaxMessagesPerStep</TN>
+            <DN>Maximum TX Messages per SampleStep</DN>
+         </GlobalVar>
+      </Generic>
+   </Global>
+   <ECUs attCount="3">
+      <ECU>
+         <Name>AMK0</Name>
+         <NodeIndex>1</NodeIndex>
+         <Generic></Generic>
+      </ECU>
+      <ECU>
+         <Name>AMK1</Name>
+         <NodeIndex>2</NodeIndex>
+         <Generic></Generic>
+      </ECU>
+      <ECU>
+         <Name>VCU_02</Name>
+         <NodeIndex>3</NodeIndex>
+         <Generic>
+            <ECUVar attName="En">
+               <InportDefault>0</InportDefault>
+               <Logic>-</Logic>
+               <Source>TRC</Source>
+               <TN>VCU_02_Enable</TN>
+               <DN>VCU_02</DN>
+            </ECUVar>
+         </Generic>
+      </ECU>
+   </ECUs>
+   <Msgs attCount="6">
+      <Msg ID="644" Name="AMK0_ActualValues1" DBCName="AMK0_ActualValues1" DBCID="644">
+         <ECU>AMK0</ECU>
+         <RECU>VCU_02</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>8</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>AMK0_ActualValues1_ID</TN>
+                  <DN>AMK0_ActualValues1_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>AMK0_ActualValues1_Length</TN>
+                  <DN>AMK0_ActualValues1_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>AMK0_ActualValues1_IDFormat</TN>
+                  <DN>AMK0_ActualValues1_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>AMK0_ActualValues1_status</TN>
+                  <DN>AMK0_ActualValues1_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>AMK0_ActualValues1_time</TN>
+                  <DN>AMK0_ActualValues1_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>AMK0_ActualValues1_dt</TN>
+                  <DN>AMK0_ActualValues1_dt</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="11">
+            <Sgn attName="AMK_bSystemReady" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bSystemReady"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bError" attStartBit="9">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bError"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bWarn" attStartBit="10">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bWarn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bQuitDcOn" attStartBit="11">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bQuitDcOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bDcOn" attStartBit="12">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bDcOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bQuitInverterOn" attStartBit="13">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bQuitInverterOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bInverterOn" attStartBit="14">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bInverterOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bDerating" attStartBit="15">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bDerating"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_ActualVelocity" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_ActualVelocity"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TorqueCurrent" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TorqueCurrent"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_MagnetizingCurrent" attStartBit="48">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_MagnetizingCurrent"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="646" Name="AMK0_ActualValues2" DBCName="AMK0_ActualValues2" DBCID="646">
+         <ECU>AMK0</ECU>
+         <RECU>VCU_02</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>8</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>AMK0_ActualValues2_ID</TN>
+                  <DN>AMK0_ActualValues2_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>AMK0_ActualValues2_Length</TN>
+                  <DN>AMK0_ActualValues2_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>AMK0_ActualValues2_IDFormat</TN>
+                  <DN>AMK0_ActualValues2_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>AMK0_ActualValues2_status</TN>
+                  <DN>AMK0_ActualValues2_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>AMK0_ActualValues2_time</TN>
+                  <DN>AMK0_ActualValues2_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>AMK0_ActualValues2_dt</TN>
+                  <DN>AMK0_ActualValues2_dt</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="4">
+            <Sgn attName="AMK_TempMotor" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TempMotor"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TempInverter" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TempInverter"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_ErrorInfo" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_ErrorInfo"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TempIGBT" attStartBit="48">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TempIGBT"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="389" Name="AMK0_SetPoints1" DBCName="AMK0_SetPoints1" DBCID="389">
+         <ECU>VCU_02</ECU>
+         <RECU>AMK0</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>8</Len>
+         <Dir>2</Dir>
+         <Vars attCount="0"/>
+         <TX>
+            <Generic>
+               <TXVar attName="CEn">
+                  <TN>AMK0_SetPoints1_CheckEnable</TN>
+                  <DN>CheckEnable</DN>
+               </TXVar>
+               <TXVar attName="En">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>AMK0_SetPoints1_Enable</TN>
+                  <DN>Enable</DN>
+               </TXVar>
+               <TXVar attName="Cyclic">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>AMK0_SetPoints1_PeriodicalOn</TN>
+                  <DN>PeriodicalOn</DN>
+               </TXVar>
+               <TXVar attName="Kout">
+                  <TN>AMK0_SetPoints1_Kickout</TN>
+                  <DN>Kickout</DN>
+                  <Type>Button</Type>
+               </TXVar>
+               <TXVar attName="Delay">
+                  <TN>AMK0_SetPoints1_DelayTime</TN>
+                  <DN>DelayTime</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="Status">
+                  <TN>AMK0_SetPoints1_status</TN>
+                  <DN>AMK0_SetPoints1_status</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="CycleTime">
+                  <TN>AMK0_SetPoints1_CycleTime</TN>
+                  <DN>CycleTime</DN>
+                  <Type>Input</Type>
+               </TXVar>
+            </Generic>
+            <ERD>
+               <A>OFF</A>
+               <ERDTRC>
+                  <A>OFF</A>
+                  <ByteMap attIdx="1">
+                     <TN>AMK0_SetPoints1_RAW_byte_1</TN>
+                     <DN>RAWswitch_1</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="2">
+                     <TN>AMK0_SetPoints1_RAW_byte_2</TN>
+                     <DN>RAWswitch_2</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="3">
+                     <TN>AMK0_SetPoints1_RAW_byte_3</TN>
+                     <DN>RAWswitch_3</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="4">
+                     <TN>AMK0_SetPoints1_RAW_byte_4</TN>
+                     <DN>RAWswitch_4</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="5">
+                     <TN>AMK0_SetPoints1_RAW_byte_5</TN>
+                     <DN>RAWswitch_5</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="6">
+                     <TN>AMK0_SetPoints1_RAW_byte_6</TN>
+                     <DN>RAWswitch_6</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="7">
+                     <TN>AMK0_SetPoints1_RAW_byte_7</TN>
+                     <DN>RAWswitch_7</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="8">
+                     <TN>AMK0_SetPoints1_RAW_byte_8</TN>
+                     <DN>RAWswitch_8</DN>
+                  </ByteMap>
+               </ERDTRC>
+               <Switch>
+                  <A>OFF</A>
+                  <TN>AMK0_SetPoints1_RAW_switch</TN>
+                  <DN>RAWswitch</DN>
+               </Switch>
+            </ERD>
+            <RDD>
+               <A>OFF</A>
+            </RDD>
+         </TX>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>AMK0_SetPoints1_ID</TN>
+                  <DN>AMK0_SetPoints1_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>AMK0_SetPoints1_Length</TN>
+                  <DN>AMK0_SetPoints1_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>AMK0_SetPoints1_IDFormat</TN>
+                  <DN>AMK0_SetPoints1_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>AMK0_SetPoints1_status</TN>
+                  <DN>AMK0_SetPoints1_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>AMK0_SetPoints1_time</TN>
+                  <DN>AMK0_SetPoints1_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>AMK0_SetPoints1_dt</TN>
+                  <DN>AMK0_SetPoints1_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>AMK0_SetPoints1_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="7">
+            <Sgn attName="AMK_bInverterOn" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_bInverterOn"/>
+                        <SgnTXVar attName="GW" attValue="AMK_bInverterOn_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_bInverterOn_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_bInverterOn_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_bInverterOn_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_bInverterOn_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bInverterOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bDcOn" attStartBit="9">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_bDcOn"/>
+                        <SgnTXVar attName="GW" attValue="AMK_bDcOn_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_bDcOn_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_bDcOn_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_bDcOn_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_bDcOn_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bDcOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bEnable" attStartBit="10">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_bEnable"/>
+                        <SgnTXVar attName="GW" attValue="AMK_bEnable_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_bEnable_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_bEnable_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_bEnable_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_bEnable_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bEnable"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bErrorReset" attStartBit="11">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_bErrorReset"/>
+                        <SgnTXVar attName="GW" attValue="AMK_bErrorReset_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_bErrorReset_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_bErrorReset_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_bErrorReset_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_bErrorReset_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bErrorReset"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TargetVelocity" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_TargetVelocity"/>
+                        <SgnTXVar attName="GW" attValue="AMK_TargetVelocity_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_TargetVelocity_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_TargetVelocity_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_TargetVelocity_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_TargetVelocity_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TargetVelocity"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TorqueLimitPositiv" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_TorqueLimitPositiv"/>
+                        <SgnTXVar attName="GW" attValue="AMK_TorqueLimitPositiv_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_TorqueLimitPositiv_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_TorqueLimitPositiv_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_TorqueLimitPositiv_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_TorqueLimitPositiv_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TorqueLimitPositiv"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TorqueLimitNegativ" attStartBit="48">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_TorqueLimitNegativ"/>
+                        <SgnTXVar attName="GW" attValue="AMK_TorqueLimitNegativ_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_TorqueLimitNegativ_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_TorqueLimitNegativ_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_TorqueLimitNegativ_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_TorqueLimitNegativ_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TorqueLimitNegativ"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="645" Name="AMK1_ActualValues1" DBCName="AMK1_ActualValues1" DBCID="645">
+         <ECU>AMK1</ECU>
+         <RECU>VCU_02</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>8</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>AMK1_ActualValues1_ID</TN>
+                  <DN>AMK1_ActualValues1_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>AMK1_ActualValues1_Length</TN>
+                  <DN>AMK1_ActualValues1_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>AMK1_ActualValues1_IDFormat</TN>
+                  <DN>AMK1_ActualValues1_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>AMK1_ActualValues1_status</TN>
+                  <DN>AMK1_ActualValues1_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>AMK1_ActualValues1_time</TN>
+                  <DN>AMK1_ActualValues1_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>AMK1_ActualValues1_dt</TN>
+                  <DN>AMK1_ActualValues1_dt</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="11">
+            <Sgn attName="AMK_bSystemReady" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bSystemReady"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bError" attStartBit="9">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bError"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bWarn" attStartBit="10">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bWarn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bQuitDcOn" attStartBit="11">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bQuitDcOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bDcOn" attStartBit="12">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bDcOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bQuitInverterOn" attStartBit="13">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bQuitInverterOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bInverterOn" attStartBit="14">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bInverterOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bDerating" attStartBit="15">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bDerating"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_ActualVelocity" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_ActualVelocity"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TorqueCurrent" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TorqueCurrent"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_MagnetizingCurrent" attStartBit="48">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_MagnetizingCurrent"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="647" Name="AMK1_ActualValues2" DBCName="AMK1_ActualValues2" DBCID="647">
+         <ECU>AMK1</ECU>
+         <RECU>VCU_02</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>8</Len>
+         <Dir>1</Dir>
+         <Vars attCount="0"/>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>AMK1_ActualValues2_ID</TN>
+                  <DN>AMK1_ActualValues2_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>AMK1_ActualValues2_Length</TN>
+                  <DN>AMK1_ActualValues2_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>AMK1_ActualValues2_IDFormat</TN>
+                  <DN>AMK1_ActualValues2_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>AMK1_ActualValues2_status</TN>
+                  <DN>AMK1_ActualValues2_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>AMK1_ActualValues2_time</TN>
+                  <DN>AMK1_ActualValues2_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>AMK1_ActualValues2_dt</TN>
+                  <DN>AMK1_ActualValues2_dt</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="4">
+            <Sgn attName="AMK_TempMotor" attStartBit="0">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TempMotor"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TempInverter" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TempInverter"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_ErrorInfo" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_ErrorInfo"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TempIGBT" attStartBit="48">
+               <Generics>
+                  <SgnTXOpt attName="Err" attValue="0"/>
+               </Generics>
+               <STRC>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TempIGBT"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+      <Msg ID="390" Name="AMK1_SetPoints1" DBCName="AMK1_SetPoints1" DBCID="390">
+         <ECU>VCU_02</ECU>
+         <RECU>AMK1</RECU>
+         <FreeRawMsg>OFF</FreeRawMsg>
+         <CaptureMsg>OFF</CaptureMsg>
+         <Len>8</Len>
+         <Dir>2</Dir>
+         <Vars attCount="0"/>
+         <TX>
+            <Generic>
+               <TXVar attName="CEn">
+                  <TN>AMK1_SetPoints1_CheckEnable</TN>
+                  <DN>CheckEnable</DN>
+               </TXVar>
+               <TXVar attName="En">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>AMK1_SetPoints1_Enable</TN>
+                  <DN>Enable</DN>
+               </TXVar>
+               <TXVar attName="Cyclic">
+                  <InportDefault>0</InportDefault>
+                  <Logic>-</Logic>
+                  <Source>TRC</Source>
+                  <TN>AMK1_SetPoints1_PeriodicalOn</TN>
+                  <DN>PeriodicalOn</DN>
+               </TXVar>
+               <TXVar attName="Kout">
+                  <TN>AMK1_SetPoints1_Kickout</TN>
+                  <DN>Kickout</DN>
+                  <Type>Button</Type>
+               </TXVar>
+               <TXVar attName="Delay">
+                  <TN>AMK1_SetPoints1_DelayTime</TN>
+                  <DN>DelayTime</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="Status">
+                  <TN>AMK1_SetPoints1_status</TN>
+                  <DN>AMK1_SetPoints1_status</DN>
+                  <Type>Display</Type>
+               </TXVar>
+               <TXVar attName="CycleTime">
+                  <TN>AMK1_SetPoints1_CycleTime</TN>
+                  <DN>CycleTime</DN>
+                  <Type>Input</Type>
+               </TXVar>
+            </Generic>
+            <ERD>
+               <A>OFF</A>
+               <ERDTRC>
+                  <A>OFF</A>
+                  <ByteMap attIdx="1">
+                     <TN>AMK1_SetPoints1_RAW_byte_1</TN>
+                     <DN>RAWswitch_1</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="2">
+                     <TN>AMK1_SetPoints1_RAW_byte_2</TN>
+                     <DN>RAWswitch_2</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="3">
+                     <TN>AMK1_SetPoints1_RAW_byte_3</TN>
+                     <DN>RAWswitch_3</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="4">
+                     <TN>AMK1_SetPoints1_RAW_byte_4</TN>
+                     <DN>RAWswitch_4</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="5">
+                     <TN>AMK1_SetPoints1_RAW_byte_5</TN>
+                     <DN>RAWswitch_5</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="6">
+                     <TN>AMK1_SetPoints1_RAW_byte_6</TN>
+                     <DN>RAWswitch_6</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="7">
+                     <TN>AMK1_SetPoints1_RAW_byte_7</TN>
+                     <DN>RAWswitch_7</DN>
+                  </ByteMap>
+                  <ByteMap attIdx="8">
+                     <TN>AMK1_SetPoints1_RAW_byte_8</TN>
+                     <DN>RAWswitch_8</DN>
+                  </ByteMap>
+               </ERDTRC>
+               <Switch>
+                  <A>OFF</A>
+                  <TN>AMK1_SetPoints1_RAW_switch</TN>
+                  <DN>RAWswitch</DN>
+               </Switch>
+            </ERD>
+            <RDD>
+               <A>OFF</A>
+            </RDD>
+         </TX>
+         <RX>
+            <Generic>
+               <RXVar attName="StdID">
+                  <TN>AMK1_SetPoints1_ID</TN>
+                  <DN>AMK1_SetPoints1_ID</DN>
+               </RXVar>
+               <RXVar attName="Len">
+                  <TN>AMK1_SetPoints1_Length</TN>
+                  <DN>AMK1_SetPoints1_Length</DN>
+               </RXVar>
+               <RXVar attName="IDFormat">
+                  <TN>AMK1_SetPoints1_IDFormat</TN>
+                  <DN>AMK1_SetPoints1_IDFormat</DN>
+               </RXVar>
+               <RXVar attName="Status">
+                  <TN>AMK1_SetPoints1_status</TN>
+                  <DN>AMK1_SetPoints1_status</DN>
+               </RXVar>
+               <RXVar attName="Time">
+                  <TN>AMK1_SetPoints1_time</TN>
+                  <DN>AMK1_SetPoints1_time</DN>
+               </RXVar>
+               <RXVar attName="DeltaTime">
+                  <TN>AMK1_SetPoints1_dt</TN>
+                  <DN>AMK1_SetPoints1_dt</DN>
+               </RXVar>
+               <RXVar attName="CycleTime">
+                  <TN>AMK1_SetPoints1_CycleTime</TN>
+                  <DN>CycleTime</DN>
+               </RXVar>
+            </Generic>
+         </RX>
+         <Sgns attCount="7">
+            <Sgn attName="AMK_bInverterOn" attStartBit="8">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_bInverterOn"/>
+                        <SgnTXVar attName="GW" attValue="AMK_bInverterOn_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_bInverterOn_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_bInverterOn_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_bInverterOn_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_bInverterOn_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bInverterOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bDcOn" attStartBit="9">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_bDcOn"/>
+                        <SgnTXVar attName="GW" attValue="AMK_bDcOn_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_bDcOn_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_bDcOn_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_bDcOn_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_bDcOn_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bDcOn"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bEnable" attStartBit="10">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_bEnable"/>
+                        <SgnTXVar attName="GW" attValue="AMK_bEnable_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_bEnable_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_bEnable_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_bEnable_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_bEnable_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bEnable"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_bErrorReset" attStartBit="11">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_bErrorReset"/>
+                        <SgnTXVar attName="GW" attValue="AMK_bErrorReset_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_bErrorReset_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_bErrorReset_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_bErrorReset_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_bErrorReset_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_bErrorReset"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TargetVelocity" attStartBit="16">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_TargetVelocity"/>
+                        <SgnTXVar attName="GW" attValue="AMK_TargetVelocity_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_TargetVelocity_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_TargetVelocity_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_TargetVelocity_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_TargetVelocity_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TargetVelocity"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TorqueLimitPositiv" attStartBit="32">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_TorqueLimitPositiv"/>
+                        <SgnTXVar attName="GW" attValue="AMK_TorqueLimitPositiv_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_TorqueLimitPositiv_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_TorqueLimitPositiv_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_TorqueLimitPositiv_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_TorqueLimitPositiv_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TorqueLimitPositiv"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+            <Sgn attName="AMK_TorqueLimitNegativ" attStartBit="48">
+               <Generics>
+                  <SgnTXOpt attName="IN"/>
+               </Generics>
+               <STRC>
+                  <TX>
+                     <Generics>
+                        <SgnTXVar attName="Const" attValue="AMK_TorqueLimitNegativ"/>
+                        <SgnTXVar attName="GW" attValue="AMK_TorqueLimitNegativ_GW"/>
+                        <SgnTXVar attName="GWSw" attValue="AMK_TorqueLimitNegativ_GwSwitch"/>
+                        <SgnTXVar attName="Sw" attValue="AMK_TorqueLimitNegativ_Switch"/>
+                        <SgnTXVar attName="DynVal" attValue="AMK_TorqueLimitNegativ_dynvalue"/>
+                        <SgnTXVar attName="DynValCntd" attValue="AMK_TorqueLimitNegativ_dyncount"/>
+                     </Generics>
+                  </TX>
+                  <RX>
+                     <Generics>
+                        <SgnRXVar attName="Const" attValue="AMK_TorqueLimitNegativ"/>
+                     </Generics>
+                  </RX>
+               </STRC>
+            </Sgn>
+         </Sgns>
+      </Msg>
+   </Msgs>
+</Settings>

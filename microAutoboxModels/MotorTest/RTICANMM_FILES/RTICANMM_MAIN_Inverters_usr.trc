@@ -1,0 +1,1518 @@
+
+
+-- START@RTICANMM_MAIN_Inverters_DS1401_1_1_1
+
+
+
+group "Inverters" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMM_CTL_SETUP_Amk_ID
+{
+type: UINT(8)
+alias: "Variation"
+flags: OUTPUT|READONLY
+desc: "current Variation of Amk"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_NL
+{
+type: UINT(32)
+alias: "NumLostMsgs"
+flags: OUTPUT|READONLY
+desc: "Number of lost messages"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_TRAFFIC
+{
+type: UINT(8)
+alias: "Traffic"
+flags: OUTPUT|READONLY
+desc: "Traffic"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_GEIN
+{
+type: UINT(8)
+alias: "GlobalEnable"
+flags: PARAM
+desc: "Enable Inverters"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMInverters_TXGEIN
+{
+type: UINT(8)
+alias: "GlobalEnableTX"
+flags: PARAM
+desc: "Enable TX of Inverters"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMInverters_MAXMSGPERSTEP
+{
+type: INT(32)
+alias: "MaxMessagesPerStep"
+flags: PARAM
+desc: "MaxMessagesPerStep"
+unit: ""
+range: <0; 100>
+value: 0
+}
+
+
+
+
+CANMMInverters_TXEEIE[0]
+{
+type: UINT(8)
+alias: "VCU_Enable"
+flags: PARAM
+desc: "Enable VCU"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+
+group "AMK0_ActualValues1" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMInverters_RX_Msg_1_Sgn_1
+{
+type: UINT(8)
+alias: "AMK_bSystemReady"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_2
+{
+type: UINT(8)
+alias: "AMK_bError"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_3
+{
+type: UINT(8)
+alias: "AMK_bWarn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_4
+{
+type: UINT(8)
+alias: "AMK_bQuitDcOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_5
+{
+type: UINT(8)
+alias: "AMK_bDcOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_6
+{
+type: UINT(8)
+alias: "AMK_bQuitInverterOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_7
+{
+type: UINT(8)
+alias: "AMK_bInverterOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_8
+{
+type: UINT(8)
+alias: "AMK_bDerating"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_9
+{
+type: INT(16)
+alias: "AMK_ActualVelocity"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "rpm"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_10
+{
+type: INT(16)
+alias: "AMK_TorqueCurrent"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_1_Sgn_11
+{
+type: INT(16)
+alias: "AMK_MagnetizingCurrent"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_MIDRX[2]
+{
+type: UINT(32)
+alias: "AMK0_ActualValues1_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 644
+}
+
+
+
+
+CANMMInverters_MIDFRX[2]
+{
+type: UINT(8)
+alias: "AMK0_ActualValues1_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXLEN[2]
+{
+type: UINT(8)
+alias: "AMK0_ActualValues1_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 8
+}
+
+
+
+
+CANMMInverters_RXsta[2]
+{
+type: UINT(8)
+alias: "AMK0_ActualValues1_status"
+flags: OUTPUT|READONLY
+desc: "AMK0_ActualValues1 Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXdt[2]
+{
+type: flt(64,IEEE)
+alias: "AMK0_ActualValues1_dt"
+flags: OUTPUT|READONLY
+desc: "AMK0_ActualValues1 DeltaTime"
+unit: "s"
+value: 0.005
+}
+
+
+
+
+CANMMInverters_RXt[2]
+{
+type: flt(64,IEEE)
+alias: "AMK0_ActualValues1_time"
+flags: OUTPUT|READONLY
+desc: "AMK0_ActualValues1 Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "AMK0_ActualValues1"
+
+
+
+group "AMK0_ActualValues2" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMInverters_RX_Msg_2_Sgn_1
+{
+type: flt(64,IEEE)
+alias: "AMK_TempMotor"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_2_Sgn_2
+{
+type: flt(64,IEEE)
+alias: "AMK_TempInverter"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_2_Sgn_3
+{
+type: UINT(16)
+alias: "AMK_ErrorInfo"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_2_Sgn_4
+{
+type: flt(64,IEEE)
+alias: "AMK_TempIGBT"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: 0
+}
+
+
+
+
+CANMMInverters_MIDRX[4]
+{
+type: UINT(32)
+alias: "AMK0_ActualValues2_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 646
+}
+
+
+
+
+CANMMInverters_MIDFRX[4]
+{
+type: UINT(8)
+alias: "AMK0_ActualValues2_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXLEN[4]
+{
+type: UINT(8)
+alias: "AMK0_ActualValues2_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 8
+}
+
+
+
+
+CANMMInverters_RXsta[4]
+{
+type: UINT(8)
+alias: "AMK0_ActualValues2_status"
+flags: OUTPUT|READONLY
+desc: "AMK0_ActualValues2 Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXdt[4]
+{
+type: flt(64,IEEE)
+alias: "AMK0_ActualValues2_dt"
+flags: OUTPUT|READONLY
+desc: "AMK0_ActualValues2 DeltaTime"
+unit: "s"
+value: 0.005
+}
+
+
+
+
+CANMMInverters_RXt[4]
+{
+type: flt(64,IEEE)
+alias: "AMK0_ActualValues2_time"
+flags: OUTPUT|READONLY
+desc: "AMK0_ActualValues2 Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "AMK0_ActualValues2"
+
+
+
+group "AMK0_SetPoints1" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMInverters_RX_Msg_3_Sgn_1
+{
+type: UINT(8)
+alias: "AMK_bInverterOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_3_Sgn_2
+{
+type: UINT(8)
+alias: "AMK_bDcOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_3_Sgn_3
+{
+type: UINT(8)
+alias: "AMK_bEnable"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_3_Sgn_4
+{
+type: UINT(8)
+alias: "AMK_bErrorReset"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_3_Sgn_5
+{
+type: INT(16)
+alias: "AMK_TargetVelocity"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "rpm"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_3_Sgn_6
+{
+type: INT(16)
+alias: "AMK_TorqueLimitPositiv"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "0.1%Mn"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_3_Sgn_7
+{
+type: INT(16)
+alias: "AMK_TorqueLimitNegativ"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "0.1%Mn"
+value: 0
+}
+
+
+
+
+CANMMInverters_MIDRX[0]
+{
+type: UINT(32)
+alias: "AMK0_SetPoints1_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 389
+}
+
+
+
+
+CANMMInverters_MIDFRX[0]
+{
+type: UINT(8)
+alias: "AMK0_SetPoints1_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXLEN[0]
+{
+type: UINT(8)
+alias: "AMK0_SetPoints1_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 8
+}
+
+
+
+
+CANMMInverters_RXsta[0]
+{
+type: UINT(8)
+alias: "AMK0_SetPoints1_status"
+flags: OUTPUT|READONLY
+desc: "AMK0_SetPoints1 Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXdt[0]
+{
+type: flt(64,IEEE)
+alias: "AMK0_SetPoints1_dt"
+flags: OUTPUT|READONLY
+desc: "AMK0_SetPoints1 DeltaTime"
+unit: "s"
+value: 0.001
+}
+
+
+
+
+CANMMInverters_RXt[0]
+{
+type: flt(64,IEEE)
+alias: "AMK0_SetPoints1_time"
+flags: OUTPUT|READONLY
+desc: "AMK0_SetPoints1 Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+group "TX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMInverters_WBS[0]
+{
+type: UINT(8)
+alias: "AMK0_SetPoints1_CheckEnable"
+flags: OUTPUT|READONLY
+desc: "Check enabled AMK0_SetPoints1"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_TXDT[0]
+{
+type: flt(64,IEEE)
+alias: "AMK0_SetPoints1_DelayTime"
+flags: OUTPUT|READONLY
+desc: "DelayTime AMK0_SetPoints1"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMInverters_TXsta[0]
+{
+type: UINT(8)
+alias: "AMK0_SetPoints1_status"
+flags: OUTPUT|READONLY
+desc: "AMK0_SetPoints1 Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_TXEIN[0]
+{
+type: UINT(8)
+alias: "AMK0_SetPoints1_Enable"
+flags: PARAM
+desc: "Enable AMK0_SetPoints1"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMInverters_TXCIE[0]
+{
+type: UINT(8)
+alias: "AMK0_SetPoints1_PeriodicalOn"
+flags: PARAM
+desc: "Activate cyclic transmission for AMK0_SetPoints1"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMInverters_TXKIEX[0]
+{
+type: UINT(8)
+alias: "AMK0_SetPoints1_Kickout"
+flags: PARAM
+desc: "Kickout AMK0_SetPoints1"
+unit: ""
+range: <0; 1>
+value: 0
+}
+
+
+
+
+CANMMInverters_TXCT[0]
+{
+type: flt(64,IEEE)
+alias: "AMK0_SetPoints1_CycleTime"
+flags: PARAM
+desc: "CycleTime AMK0_SetPoints1"
+unit: "s"
+range: <0; 1000>
+value: 1.000000e-03
+}
+
+
+
+
+
+endgroup -- block-group "TX"
+
+
+
+endgroup -- block-group "AMK0_SetPoints1"
+
+
+
+group "AMK1_ActualValues1" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMInverters_RX_Msg_4_Sgn_1
+{
+type: UINT(8)
+alias: "AMK_bSystemReady"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_2
+{
+type: UINT(8)
+alias: "AMK_bError"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_3
+{
+type: UINT(8)
+alias: "AMK_bWarn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_4
+{
+type: UINT(8)
+alias: "AMK_bQuitDcOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_5
+{
+type: UINT(8)
+alias: "AMK_bDcOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_6
+{
+type: UINT(8)
+alias: "AMK_bQuitInverterOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_7
+{
+type: UINT(8)
+alias: "AMK_bInverterOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_8
+{
+type: UINT(8)
+alias: "AMK_bDerating"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_9
+{
+type: INT(16)
+alias: "AMK_ActualVelocity"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "rpm"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_10
+{
+type: INT(16)
+alias: "AMK_TorqueCurrent"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_4_Sgn_11
+{
+type: INT(16)
+alias: "AMK_MagnetizingCurrent"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_MIDRX[3]
+{
+type: UINT(32)
+alias: "AMK1_ActualValues1_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 645
+}
+
+
+
+
+CANMMInverters_MIDFRX[3]
+{
+type: UINT(8)
+alias: "AMK1_ActualValues1_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXLEN[3]
+{
+type: UINT(8)
+alias: "AMK1_ActualValues1_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 8
+}
+
+
+
+
+CANMMInverters_RXsta[3]
+{
+type: UINT(8)
+alias: "AMK1_ActualValues1_status"
+flags: OUTPUT|READONLY
+desc: "AMK1_ActualValues1 Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXdt[3]
+{
+type: flt(64,IEEE)
+alias: "AMK1_ActualValues1_dt"
+flags: OUTPUT|READONLY
+desc: "AMK1_ActualValues1 DeltaTime"
+unit: "s"
+value: 0.005
+}
+
+
+
+
+CANMMInverters_RXt[3]
+{
+type: flt(64,IEEE)
+alias: "AMK1_ActualValues1_time"
+flags: OUTPUT|READONLY
+desc: "AMK1_ActualValues1 Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "AMK1_ActualValues1"
+
+
+
+group "AMK1_ActualValues2" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMInverters_RX_Msg_5_Sgn_1
+{
+type: flt(64,IEEE)
+alias: "AMK_TempMotor"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_5_Sgn_2
+{
+type: flt(64,IEEE)
+alias: "AMK_TempInverter"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_5_Sgn_3
+{
+type: UINT(16)
+alias: "AMK_ErrorInfo"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_5_Sgn_4
+{
+type: flt(64,IEEE)
+alias: "AMK_TempIGBT"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "°C"
+value: 0
+}
+
+
+
+
+CANMMInverters_MIDRX[5]
+{
+type: UINT(32)
+alias: "AMK1_ActualValues2_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 647
+}
+
+
+
+
+CANMMInverters_MIDFRX[5]
+{
+type: UINT(8)
+alias: "AMK1_ActualValues2_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXLEN[5]
+{
+type: UINT(8)
+alias: "AMK1_ActualValues2_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 8
+}
+
+
+
+
+CANMMInverters_RXsta[5]
+{
+type: UINT(8)
+alias: "AMK1_ActualValues2_status"
+flags: OUTPUT|READONLY
+desc: "AMK1_ActualValues2 Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXdt[5]
+{
+type: flt(64,IEEE)
+alias: "AMK1_ActualValues2_dt"
+flags: OUTPUT|READONLY
+desc: "AMK1_ActualValues2 DeltaTime"
+unit: "s"
+value: 0.005
+}
+
+
+
+
+CANMMInverters_RXt[5]
+{
+type: flt(64,IEEE)
+alias: "AMK1_ActualValues2_time"
+flags: OUTPUT|READONLY
+desc: "AMK1_ActualValues2 Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+endgroup -- block-group "AMK1_ActualValues2"
+
+
+
+group "AMK1_SetPoints1" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+
+group "RX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMInverters_RX_Msg_6_Sgn_1
+{
+type: UINT(8)
+alias: "AMK_bInverterOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_6_Sgn_2
+{
+type: UINT(8)
+alias: "AMK_bDcOn"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_6_Sgn_3
+{
+type: UINT(8)
+alias: "AMK_bEnable"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_6_Sgn_4
+{
+type: UINT(8)
+alias: "AMK_bErrorReset"
+flags: OUTPUT|READONLY
+desc: ""
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_6_Sgn_5
+{
+type: INT(16)
+alias: "AMK_TargetVelocity"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "rpm"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_6_Sgn_6
+{
+type: INT(16)
+alias: "AMK_TorqueLimitPositiv"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "0.1%Mn"
+value: 0
+}
+
+
+
+
+CANMMInverters_RX_Msg_6_Sgn_7
+{
+type: INT(16)
+alias: "AMK_TorqueLimitNegativ"
+flags: OUTPUT|READONLY
+desc: ""
+unit: "0.1%Mn"
+value: 0
+}
+
+
+
+
+CANMMInverters_MIDRX[1]
+{
+type: UINT(32)
+alias: "AMK1_SetPoints1_ID"
+flags: OUTPUT|READONLY
+desc: "Message ID"
+unit: ""
+value: 390
+}
+
+
+
+
+CANMMInverters_MIDFRX[1]
+{
+type: UINT(8)
+alias: "AMK1_SetPoints1_IDFormat"
+flags: OUTPUT|READONLY
+desc: "Message ID Format"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXLEN[1]
+{
+type: UINT(8)
+alias: "AMK1_SetPoints1_Length"
+flags: OUTPUT|READONLY
+desc: "Message Length"
+unit: ""
+value: 8
+}
+
+
+
+
+CANMMInverters_RXsta[1]
+{
+type: UINT(8)
+alias: "AMK1_SetPoints1_status"
+flags: OUTPUT|READONLY
+desc: "AMK1_SetPoints1 Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_RXdt[1]
+{
+type: flt(64,IEEE)
+alias: "AMK1_SetPoints1_dt"
+flags: OUTPUT|READONLY
+desc: "AMK1_SetPoints1 DeltaTime"
+unit: "s"
+value: 0.001
+}
+
+
+
+
+CANMMInverters_RXt[1]
+{
+type: flt(64,IEEE)
+alias: "AMK1_SetPoints1_time"
+flags: OUTPUT|READONLY
+desc: "AMK1_SetPoints1 Time"
+unit: "s"
+value: 0.0
+}
+
+
+
+
+
+endgroup -- block-group "RX"
+
+
+
+group "TX" -- subsystem-group
+{
+     flags: COLLAPSED
+}
+
+
+CANMMInverters_WBS[1]
+{
+type: UINT(8)
+alias: "AMK1_SetPoints1_CheckEnable"
+flags: OUTPUT|READONLY
+desc: "Check enabled AMK1_SetPoints1"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_TXDT[1]
+{
+type: flt(64,IEEE)
+alias: "AMK1_SetPoints1_DelayTime"
+flags: OUTPUT|READONLY
+desc: "DelayTime AMK1_SetPoints1"
+unit: "s"
+value: 0
+}
+
+
+
+
+CANMMInverters_TXsta[1]
+{
+type: UINT(8)
+alias: "AMK1_SetPoints1_status"
+flags: OUTPUT|READONLY
+desc: "AMK1_SetPoints1 Status"
+unit: ""
+value: 0
+}
+
+
+
+
+CANMMInverters_TXEIN[1]
+{
+type: UINT(8)
+alias: "AMK1_SetPoints1_Enable"
+flags: PARAM
+desc: "Enable AMK1_SetPoints1"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMInverters_TXCIE[1]
+{
+type: UINT(8)
+alias: "AMK1_SetPoints1_PeriodicalOn"
+flags: PARAM
+desc: "Activate cyclic transmission for AMK1_SetPoints1"
+unit: ""
+range: <0; 1>
+value: 1
+}
+
+
+
+
+CANMMInverters_TXKIEX[1]
+{
+type: UINT(8)
+alias: "AMK1_SetPoints1_Kickout"
+flags: PARAM
+desc: "Kickout AMK1_SetPoints1"
+unit: ""
+range: <0; 1>
+value: 0
+}
+
+
+
+
+CANMMInverters_TXCT[1]
+{
+type: flt(64,IEEE)
+alias: "AMK1_SetPoints1_CycleTime"
+flags: PARAM
+desc: "CycleTime AMK1_SetPoints1"
+unit: "s"
+range: <0; 1000>
+value: 1.000000e-03
+}
+
+
+
+
+
+endgroup -- block-group "TX"
+
+
+
+endgroup -- block-group "AMK1_SetPoints1"
+
+
+
+group "RT" -- subsystem-group
+{
+     flags: COLLAPSED | HIDDEN
+}
+
+
+
+group "FreeRawMessages" -- subsystem-group
+{
+     flags: COLLAPSED | HIDDEN
+}
+
+
+
+endgroup -- block-group "FreeRawMessages"
+
+
+
+endgroup -- block-group "RT"
+
+
+
+endgroup -- block-group "Inverters"
+
+
+-- END@RTICANMM_MAIN_Inverters_DS1401_1_1_1
