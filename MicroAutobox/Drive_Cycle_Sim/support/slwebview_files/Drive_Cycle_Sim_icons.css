@@ -1,0 +1,13 @@
+.Drive_Cycle_Sim0,
+.Drive_Cycle_Sim1,
+.Drive_Cycle_Sim2,
+.Drive_Cycle_Sim3,
+.Drive_Cycle_Sim4,
+.Drive_Cycle_Sim5 { background-image: url('Drive_Cycle_Sim_icons.png'); width: 16px; height: 16px; }
+
+.Drive_Cycle_Sim0 { background-position: -0px; }
+.Drive_Cycle_Sim1 { background-position: -16px; }
+.Drive_Cycle_Sim2 { background-position: -32px; }
+.Drive_Cycle_Sim3 { background-position: -48px; }
+.Drive_Cycle_Sim4 { background-position: -64px; }
+.Drive_Cycle_Sim5 { background-position: -80px; }
